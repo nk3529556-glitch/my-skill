@@ -94,7 +94,6 @@ function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
 function renderCourses(){const q=document.getElementById("courseSearch").value.toLowerCase().trim();const lvl=document.getElementById("levelFilter").value;let list=courses.filter(c=>(activeCategory==="all"||c.category===activeCategory)&&(!q||(c.title+" "+c.desc+" "+c.category).toLowerCase().includes(q))&&(lvl==="all"||c.level===lvl));if(document.getElementById("sortFilter").value==="title")list.sort((a,b)=>a.title.localeCompare(b.title));document.getElementById("courseCount").textContent=list.length+" learning paths";document.getElementById("courseGrid").innerHTML=list.map(c=>`<article class="course"><div class="course-cover" style="background:${c.color}"><span class="cover-emoji">${c.emoji}</span><span class="level">${c.level}</span></div><div class="course-body"><div class="course-meta"><span>${esc(c.category)}</span><span>◷ ${esc(c.time)}</span></div><h3>${esc(c.title)}</h3><p>${esc(c.desc)}</p><div class="course-bottom"><span class="price">${c.price} <small>· learning path</small></span><button class="bookmark ${saved.includes(c.id)?"saved":""}" aria-label="Save ${esc(c.title)}" title="Save skill" onclick="toggleSave(${c.id})">${saved.includes(c.id)?"♥":"♡"}</button></div><button class="btn ghost" style="margin-top:13px" onclick="startCourse(${c.id})">सीखना शुरू करें →</button></div></article>`).join("");document.getElementById("emptyState").style.display=list.length?"none":"block"}
 function toggleSave(id){saved=saved.includes(id)?saved.filter(x=>x!==id):[...saved,id];localStorage.setItem("myskill_saved",JSON.stringify(saved));renderCourses();toast(saved.includes(id)?"Skill आपकी saved list में है।":"Saved list से हटा दिया गया।")}
-function startCourse(id){const c=courses.find(x=>x.id===id);toast("“"+c.title+"” चुना गया। अगला कदम: इसके लिए lessons और projects जोड़ना।")}
 function openModal(id){document.getElementById(id).showModal()}function closeModal(id){document.getElementById(id).close()}
 document.querySelectorAll(".category").forEach(b=>b.addEventListener("click",()=>{document.querySelectorAll(".category").forEach(x=>x.classList.remove("active"));b.classList.add("active");activeCategory=b.dataset.category;renderCourses();document.getElementById("courses").scrollIntoView({behavior:"smooth"})}));
 ["courseSearch","levelFilter","sortFilter"].forEach(id=>document.getElementById(id).addEventListener(id==="courseSearch"?"input":"change",renderCourses));
@@ -103,6 +102,17 @@ function getUserSkills(){try{return JSON.parse(localStorage.getItem("myskill_use
 function renderCommunity(){const list=getUserSkills();document.getElementById("communityEmpty").style.display=list.length?"none":"block";document.getElementById("communityGrid").innerHTML=list.map((s,i)=>`<article class="course"><div class="course-cover" style="background:linear-gradient(135deg,#d9fff0,#dcd7ff)"><span class="cover-emoji">💡</span><span class="level">${esc(s.level)}</span></div><div class="course-body"><div class="course-meta"><span>${esc(s.category)}</span><span>Community</span></div><h3>${esc(s.title)}</h3><p>${esc(s.desc)}</p><div class="course-bottom"><span class="price">आपकी Skill</span><button class="bookmark" onclick="deleteSkill(${i})" aria-label="Skill हटाएँ" title="हटाएँ">×</button></div></div></article>`).join("")}
 document.getElementById("skillForm").addEventListener("submit",e=>{e.preventDefault();const list=getUserSkills();list.unshift({title:document.getElementById("skillTitle").value.trim(),category:document.getElementById("skillCategory").value,desc:document.getElementById("skillDesc").value.trim(),level:document.getElementById("skillLevel").value});localStorage.setItem("myskill_user_skills",JSON.stringify(list));closeModal("teachModal");e.target.reset();renderCommunity();toast("आपकी Skill इस browser में सेव हो गई!");document.getElementById("mySkills").scrollIntoView({behavior:"smooth"})});
 function deleteSkill(i){const list=getUserSkills();list.splice(i,1);localStorage.setItem("myskill_user_skills",JSON.stringify(list));renderCommunity();toast("Skill हटा दी गई।")}
+  function startCourse(id) {
+    const c = courses.find(x => x.id === id);
+
+    if (!c) return;
+
+    if (id === 1) {
+        window.location.href = "html.html";
+    } else {
+        toast("“" + c.title + "” का कोर्स जल्द तैयार किया जाएगा।");
+    }
+  }
 document.getElementById("themeBtn").addEventListener("click",()=>{document.body.classList.toggle("dark");localStorage.setItem("myskill_dark",document.body.classList.contains("dark")?"1":"0")});
 if(localStorage.getItem("myskill_dark")==="1")document.body.classList.add("dark");
 document.getElementById("menuBtn").addEventListener("click",()=>document.getElementById("navlinks").classList.toggle("open"));
