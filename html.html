@@ -770,6 +770,191 @@ quizForm.addEventListener("reset", function () {
     quizResult.textContent = "";
 });
 </script>
+<!-- अतिरिक्त HTML टैग -->
+<section id="extra-html-tags" style="padding:20px; margin:20px auto; max-width:1000px; background:#f0f9ff; border-radius:12px; font-family:Arial,sans-serif;">
 
+  <h2 style="color:#075985;">📚 HTML के 12 अतिरिक्त महत्वपूर्ण टैग</h2>
+
+  <p>इन टैगों का उपयोग फ़ॉर्म, वेबसाइट की संरचना, मीडिया और अन्य कामों के लिए किया जाता है।</p>
+
+  <!-- 1. FIELDSET और LEGEND -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>1. &lt;fieldset&gt; और &lt;legend&gt;</h3>
+    <p><b>काम:</b> फ़ॉर्म के संबंधित इनपुट को एक समूह में रखना और उस समूह को शीर्षक देना।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;fieldset&gt;
+  &lt;legend&gt;व्यक्तिगत जानकारी&lt;/legend&gt;
+  &lt;label&gt;नाम:
+    &lt;input type="text"&gt;
+  &lt;/label&gt;
+&lt;/fieldset&gt;</code></pre>
+  </div>
+
+  <!-- 2. DATALIST -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>2. &lt;datalist&gt;</h3>
+    <p><b>काम:</b> इनपुट बॉक्स में उपयोगकर्ता को विकल्पों के सुझाव देना।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;label for="city"&gt;शहर चुनें:&lt;/label&gt;
+
+&lt;input id="city" list="cities"&gt;
+
+&lt;datalist id="cities"&gt;
+  &lt;option value="Agra"&gt;
+  &lt;option value="Delhi"&gt;
+  &lt;option value="Lucknow"&gt;
+&lt;/datalist&gt;</code></pre>
+  </div>
+
+  <!-- 3. OPTGROUP -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>3. &lt;optgroup&gt;</h3>
+    <p><b>काम:</b> &lt;select&gt; के विकल्पों को अलग-अलग समूहों में बाँटना।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;select&gt;
+  &lt;optgroup label="फल"&gt;
+    &lt;option&gt;सेब&lt;/option&gt;
+    &lt;option&gt;आम&lt;/option&gt;
+  &lt;/optgroup&gt;
+
+  &lt;optgroup label="सब्जियाँ"&gt;
+    &lt;option&gt;आलू&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+  </div>
+
+  <!-- 4. OUTPUT -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>4. &lt;output&gt;</h3>
+    <p><b>काम:</b> किसी गणना या क्रिया का परिणाम दिखाना।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;form oninput="result.value=Number(a.value)+Number(b.value)"&gt;
+  &lt;input id="a" type="number" value="2"&gt; +
+
+  &lt;input id="b" type="number" value="3"&gt; =
+
+  &lt;output name="result"&gt;5&lt;/output&gt;
+&lt;/form&gt;</code></pre>
+  </div>
+
+  <!-- 5. PROGRESS -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>5. &lt;progress&gt;</h3>
+    <p><b>काम:</b> किसी काम की प्रगति दिखाना।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;label for="download"&gt;डाउनलोड:&lt;/label&gt;
+
+&lt;progress id="download" value="60" max="100"&gt;
+  60%
+&lt;/progress&gt;</code></pre>
+
+    <p><b>परिणाम:</b> 100 में से 60 की प्रगति दिखाई जाएगी।</p>
+  </div>
+
+  <!-- 6. METER -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>6. &lt;meter&gt;</h3>
+    <p><b>काम:</b> किसी निश्चित सीमा में माप दिखाना, जैसे अंक या स्तर।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;label for="marks"&gt;अंक:&lt;/label&gt;
+
+&lt;meter id="marks" min="0" max="100" value="75"&gt;
+  75/100
+&lt;/meter&gt;</code></pre>
+  </div>
+
+  <!-- 7. DIALOG -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>7. &lt;dialog&gt;</h3>
+    <p><b>काम:</b> डायलॉग बॉक्स या संवाद विंडो बनाना।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;dialog id="message"&gt;
+  यह एक संवाद बॉक्स है।
+
+  &lt;button onclick="this.closest('dialog').close()"&gt;
+    बंद करें
+  &lt;/button&gt;
+&lt;/dialog&gt;
+
+&lt;button onclick="document.getElementById('message').showModal()"&gt;
+  संवाद बॉक्स खोलें
+&lt;/button&gt;</code></pre>
+  </div>
+
+  <!-- 8. TEMPLATE -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>8. &lt;template&gt;</h3>
+    <p><b>काम:</b> HTML सामग्री को सुरक्षित रखना, जिसे JavaScript से बाद में पेज पर जोड़ा जा सकता है।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;template id="card"&gt;
+  &lt;p&gt;यह बाद में जोड़ा जाएगा।&lt;/p&gt;
+&lt;/template&gt;</code></pre>
+  </div>
+
+  <!-- 9. NOSCRIPT -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>9. &lt;noscript&gt;</h3>
+    <p><b>काम:</b> जब JavaScript उपलब्ध या चालू न हो, तब वैकल्पिक संदेश दिखाना।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;noscript&gt;
+  इस वेबसाइट के कुछ फ़ीचर के लिए JavaScript आवश्यक है।
+&lt;/noscript&gt;</code></pre>
+  </div>
+
+  <!-- 10. ADDRESS -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>10. &lt;address&gt;</h3>
+    <p><b>काम:</b> पेज या लेख के लेखक अथवा संबंधित व्यक्ति या संस्था की संपर्क जानकारी देना।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;address&gt;
+  संपर्क: example@example.com
+&lt;/address&gt;</code></pre>
+  </div>
+
+  <!-- 11. SEARCH -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>11. &lt;search&gt;</h3>
+    <p><b>काम:</b> खोज से संबंधित फ़ॉर्म या सामग्री को दर्शाना।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;search&gt;
+  &lt;form action="/search"&gt;
+    &lt;label for="q"&gt;खोजें:&lt;/label&gt;
+    &lt;input id="q" name="q" type="search"&gt;
+    &lt;button type="submit"&gt;खोजें&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/search&gt;</code></pre>
+  </div>
+
+  <!-- 12. DETAILS और SUMMARY -->
+  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
+    <h3>12. &lt;details&gt; और &lt;summary&gt;</h3>
+    <p><b>काम:</b> क्लिक करने पर अतिरिक्त जानकारी खोलना या बंद करना।</p>
+
+    <h4>उदाहरण:</h4>
+    <pre><code>&lt;details&gt;
+  &lt;summary&gt;HTML क्या है?&lt;/summary&gt;
+  HTML वेब पेज की संरचना बनाने की भाषा है।
+&lt;/details&gt;</code></pre>
+  </div>
+
+  <!-- जरूरी सूचना -->
+  <div style="background:#dbeafe; padding:12px; border-radius:8px;">
+    <b>ध्यान दें:</b>
+    यह HTML के 12 अतिरिक्त टैगों का चयन है, सभी HTML टैगों की पूरी सूची नहीं।
+    कुछ टैगों के लिए CSS या JavaScript की भी आवश्यकता हो सकती है।
+  </div>
+
+    </section>
 </body>
     </html>
