@@ -1,97 +1,257 @@
 <!DOCTYPE html>
 <html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="HTML के टैग, Attributes, उदाहरण और अभ्यास आसान हिंदी में सीखें।">
-<title>HTML Master Course | My Skill</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-*{box-sizing:border-box;scroll-behavior:smooth}
-body{margin:0;font-family:Arial,"Noto Sans Devanagari",sans-serif;background:#f1f5f9;color:#172033;line-height:1.8}
-header{background:linear-gradient(135deg,#075985,#2563eb);color:white;padding:35px 15px;text-align:center}
-header h1{font-size:32px;margin:0}
-nav{background:#0f172a;padding:12px;text-align:center;position:sticky;top:0;z-index:10}
-nav a{display:inline-block;color:white;text-decoration:none;padding:5px 9px}
-nav a:hover{color:#93c5fd}
-.container{max-width:1050px;margin:auto;padding:18px}
-.card{background:white;padding:20px;margin:18px 0;border-radius:12px;box-shadow:0 3px 12px #0000000d;border-left:5px solid #2563eb}
-h2{color:#075985;margin-top:0}
-h3{color:#1d4ed8}
-.note{background:#e0f2fe;padding:12px;border-radius:8px}
-.warning{background:#fef3c7;padding:12px;border-radius:8px}
-.success{background:#dcfce7;padding:12px;border-radius:8px}
-code{color:#be123c;background:#fff1f2;padding:2px 5px;border-radius:4px;overflow-wrap:anywhere}
-pre{background:#0f172a;color:#e2e8f0;padding:15px;border-radius:8px;overflow-x:auto;line-height:1.6;white-space:pre}
-pre code{color:inherit;background:transparent;padding:0}
-input,select,textarea{max-width:100%;padding:10px;border:1px solid #cbd5e1;border-radius:7px;font-size:16px}
-#tagSearch{width:100%;margin:10px 0 20px}
-.tag-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
-.tag-item{background:#f8fafc;border:1px solid #dbeafe;padding:12px;border-radius:8px;min-width:0}
-.btn,button{display:inline-block;border:0;background:#2563eb;color:white;padding:10px 15px;border-radius:8px;cursor:pointer;text-decoration:none;font-size:15px;margin:4px}
-button:hover,.btn:hover{background:#1d4ed8}
-.question{border-bottom:1px solid #e2e8f0;padding:12px 0}
-.question label{display:block;padding:4px}
-.question input{width:auto}
-.result{font-weight:bold;margin-top:12px}
-table{width:100%;border-collapse:collapse;margin:12px 0}
-th,td{border:1px solid #94a3b8;padding:9px;text-align:left}
-th{background:#dbeafe}
-footer{text-align:center;background:#0f172a;color:white;padding:20px;margin-top:30px}
-.part{scroll-margin-top:75px}
-@media(max-width:600px){header h1{font-size:25px}.container{padding:10px}.card{padding:14px}nav a{padding:5px;font-size:14px}}
-</style>
+    <title>HTML Master Course | My Skill</title>
+
+    <meta name="description"
+          content="HTML को आसान हिंदी में सीखें। HTML टैग्स, उदाहरण, नोट्स, टेस्ट और प्रैक्टिस।">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f3f6fb;
+            color: #202b3c;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #123a70;
+            color: white;
+            padding: 24px 15px;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        nav {
+            background: #0b2850;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px 10px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffd166;
+        }
+
+        .container {
+            width: 94%;
+            max-width: 1000px;
+            margin: 20px auto;
+        }
+
+        .welcome,
+        .lesson,
+        .tag-card,
+        .quiz,
+        .practice {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 12px #0000000d;
+        }
+
+        h2 {
+            color: #123a70;
+            margin-bottom: 12px;
+        }
+
+        h3 {
+            color: #176b87;
+            margin: 15px 0 8px;
+        }
+
+        p {
+            margin-bottom: 10px;
+        }
+
+        .highlight {
+            background: #e7f3ff;
+            border-left: 5px solid #1976d2;
+            padding: 12px;
+            margin: 12px 0;
+            border-radius: 5px;
+        }
+
+        code,
+        pre {
+            font-family: Consolas, monospace;
+        }
+
+        pre {
+            background: #172337;
+            color: #eaf3ff;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+            margin: 10px 0;
+            white-space: pre-wrap;
+            overflow-wrap: anywhere;
+        }
+
+        .tag {
+            color: #087443;
+            font-weight: bold;
+        }
+
+        .search-box {
+            width: 100%;
+            padding: 13px;
+            border: 2px solid #c8d5e5;
+            border-radius: 8px;
+            font-size: 16px;
+            margin: 10px 0 20px;
+        }
+
+        .tag-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 15px;
+        }
+
+        .tag-card {
+            margin-bottom: 0;
+            border: 1px solid #e0e8f1;
+        }
+
+        .tag-card h3 {
+            margin-top: 0;
+        }
+
+        button {
+            background: #176bce;
+            color: white;
+            border: none;
+            padding: 11px 18px;
+            border-radius: 7px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        button:hover {
+            background: #0b4d9c;
+        }
+
+        .question {
+            padding: 14px 0;
+            border-bottom: 1px solid #e0e8f1;
+        }
+
+        .question label {
+            display: block;
+            margin: 7px 0;
+            cursor: pointer;
+        }
+
+        #quizResult {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 150px;
+            padding: 12px;
+            border: 1px solid #b8c6d8;
+            border-radius: 8px;
+            font-family: Consolas, monospace;
+            font-size: 15px;
+        }
+
+        footer {
+            background: #0b2850;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 30px;
+        }
+
+        .small {
+            color: #5a6677;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            .welcome,
+            .lesson,
+            .tag-card,
+            .quiz,
+            .practice {
+                padding: 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
 <header>
-<h1>📘 HTML Master Course</h1>
-<p>HTML को बिल्कुल शुरुआत से आसान हिंदी में सीखें</p>
-<p>My Skill Learning Website 🚀</p>
+    <h1>My Skill</h1>
+    <p>HTML Master Course — बिल्कुल आसान हिंदी में</p>
 </header>
 
 <nav>
-<a href="#home">🏠 होम</a>
-<a href="#part1">भाग 1</a>
-<a href="#part2">भाग 2</a>
-<a href="#part3">भाग 3</a>
-<a href="#part4">भाग 4</a>
-<a href="#part5">भाग 5</a>
-<a href="#quiz">टेस्ट</a>
+    <a href="index.html">Home</a>
+    <a href="corse.html">Courses</a>
+    <a href="#lessons">HTML Notes</a>
+    <a href="#all-tags">HTML Tags</a>
+    <a href="#quiz">Test</a>
+    <a href="#practice">Practice</a>
 </nav>
 
-<main class="container" id="home">
+<main class="container">
 
-<section class="card">
-<h2>स्वागत है! 👋</h2>
-<p>इस कोर्स में HTML की मूल बातें, टेक्स्ट, लिंक, चित्र, सूचियाँ और टेबल सीखेंगे। हर विषय में टैग का काम और उदाहरण दिए गए हैं।</p>
-<div class="note"><strong>याद रखें:</strong> HTML वेब पेज की संरचना बनाता है। CSS पेज को सजाता है और JavaScript उसमें इंटरैक्टिव सुविधाएँ जोड़ता है।</div>
-<h3>पाँच भागों का परिचय</h3>
-<ol>
-<li>HTML की मूल बातें और Attributes</li>
-<li>Headings, Paragraphs और Formatting</li>
-<li>Links और Images</li>
-<li>Lists</li>
-<li>Tables</li>
-</ol>
-</section>
+    <section class="welcome">
+        <h2>HTML क्या है?</h2>
 
-<!-- भाग 1 -->
-<section class="card part" id="part1">
-<h2>📘 भाग 1: HTML की मूल बातें</h2>
+        <p>
+            HTML का पूरा नाम HyperText Markup Language है।
+            इसका उपयोग वेब पेज की संरचना बनाने के लिए किया जाता है।
+        </p>
 
-<h3>1. HTML क्या है?</h3>
-<p>HTML का पूरा नाम <strong>HyperText Markup Language</strong> है। इसका उपयोग वेब पेज की संरचना बनाने के लिए होता है।</p>
-<p>उदाहरण: वेबसाइट पर शीर्षक, पैराग्राफ, चित्र, लिंक और टेबल दिखाने के लिए HTML का उपयोग किया जाता है।</p>
+        <div class="highlight">
+            <strong>आसान भाषा में:</strong>
+            HTML वेबसाइट का ढाँचा तैयार करता है।
+            CSS वेबसाइट को सुंदर बनाती है और JavaScript
+            उसमें इंटरैक्टिव सुविधाएँ जोड़ती है।
+        </div>
 
-<h3>2. HTML दस्तावेज़ का ढाँचा</h3>
-<pre><code>&lt;!DOCTYPE html&gt;
+        <h3>HTML का पहला उदाहरण</h3>
+
+        <pre><code>&lt;!DOCTYPE html&gt;
 &lt;html lang="hi"&gt;
 &lt;head&gt;
     &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport"
-          content="width=device-width, initial-scale=1.0"&gt;
     &lt;title&gt;मेरा पहला पेज&lt;/title&gt;
 &lt;/head&gt;
 &lt;body&gt;
@@ -99,921 +259,994 @@ footer{text-align:center;background:#0f172a;color:white;padding:20px;margin-top:
     &lt;p&gt;यह मेरा पहला वेब पेज है।&lt;/p&gt;
 &lt;/body&gt;
 &lt;/html&gt;</code></pre>
+    </section>
 
-<div class="tag-list">
-<div class="tag-item"><h3><code>&lt;!DOCTYPE html&gt;</code></h3><p>ब्राउज़र को बताता है कि दस्तावेज़ HTML5 मानक के अनुसार है।</p></div>
-<div class="tag-item"><h3><code>&lt;html&gt;</code></h3><p>HTML दस्तावेज़ का मूल तत्व है।</p><pre><code>&lt;html lang="hi"&gt;
-...
-&lt;/html&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;head&gt;</code></h3><p>पेज का शीर्षक, मेटाडेटा, CSS और अन्य जानकारी रखता है।</p><pre><code>&lt;head&gt;
-  &lt;title&gt;मेरा पेज&lt;/title&gt;
-&lt;/head&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;title&gt;</code></h3><p>ब्राउज़र टैब का शीर्षक निर्धारित करता है।</p><pre><code>&lt;title&gt;मेरी वेबसाइट&lt;/title&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;meta&gt;</code></h3><p>कैरेक्टर सेट, विवरण और अन्य मेटाडेटा बताता है। इसका अलग समापन टैग नहीं होता।</p><pre><code>&lt;meta charset="UTF-8"&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;body&gt;</code></h3><p>वेब पेज की मुख्य दिखाई देने वाली सामग्री रखता है।</p><pre><code>&lt;body&gt;
-  &lt;p&gt;नमस्ते!&lt;/p&gt;
-&lt;/body&gt;</code></pre></div>
-</div>
+    <section id="lessons">
 
-<h3>3. टैग और एलिमेंट</h3>
-<p><strong>टैग:</strong> कोणीय ब्रैकेट में लिखा HTML निर्देश, जैसे <code>&lt;p&gt;</code>।</p>
-<p><strong>एलिमेंट:</strong> सामान्यतः शुरुआती टैग, सामग्री और समापन टैग का समूह।</p>
-<pre><code>&lt;p&gt;यह एक पैराग्राफ है।&lt;/p&gt;</code></pre>
-<ul>
-<li><code>&lt;p&gt;</code> — शुरुआती टैग।</li>
-<li>बीच का वाक्य — सामग्री।</li>
-<li><code>&lt;/p&gt;</code> — समापन टैग।</li>
-</ul>
-<p class="note">कुछ तत्व खाली होते हैं, जैसे <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;img&gt;</code> और <code>&lt;meta&gt;</code>। इनके अलग समापन टैग नहीं होते।</p>
+        <article class="lesson">
+            <h2>पाठ 1: HTML Document के मुख्य Tags</h2>
 
-<h3>4. Attributes क्या हैं?</h3>
-<p>Attributes किसी HTML तत्व के बारे में अतिरिक्त जानकारी देते हैं। इन्हें शुरुआती टैग में लिखा जाता है।</p>
-<pre><code>&lt;a href="https://example.com" target="_blank"&gt;
-  वेबसाइट खोलें
-&lt;/a&gt;
+            <h3>1. &lt;!DOCTYPE html&gt;</h3>
+            <p>ब्राउज़र को बताता है कि डॉक्यूमेंट HTML5 के अनुसार लिखा गया है।</p>
 
-&lt;img src="photo.jpg" alt="फूल का चित्र" width="200"&gt;</code></pre>
+            <h3>2. &lt;html&gt;</h3>
+            <p>पूरे HTML डॉक्यूमेंट का मुख्य तत्व है।</p>
 
-<div class="tag-list">
-<div class="tag-item"><h3><code>id</code></h3><p>किसी तत्व को अलग पहचान देता है। एक पेज पर एक ही ID को कई तत्वों में दोहराने से बचें।</p><pre><code>&lt;p id="intro"&gt;परिचय&lt;/p&gt;</code></pre></div>
-<div class="tag-item"><h3><code>class</code></h3><p>एक या अधिक तत्वों को समूह में रखता है, ताकि CSS या JavaScript से चुना जा सके।</p><pre><code>&lt;p class="note"&gt;जरूरी बात&lt;/p&gt;</code></pre></div>
-<div class="tag-item"><h3><code>style</code></h3><p>तत्व पर सीधे CSS लिखने के लिए।</p><pre><code>&lt;p style="color:blue"&gt;नीला टेक्स्ट&lt;/p&gt;</code></pre></div>
-<div class="tag-item"><h3><code>title</code></h3><p>तत्व के बारे में अतिरिक्त जानकारी देता है, जो अक्सर माउस ले जाने पर दिखती है।</p><pre><code>&lt;p title="अतिरिक्त जानकारी"&gt;यहाँ आएँ&lt;/p&gt;</code></pre></div>
-<div class="tag-item"><h3><code>lang</code></h3><p>सामग्री की भाषा बताता है।</p><pre><code>&lt;html lang="hi"&gt;</code></pre></div>
-<div class="tag-item"><h3><code>hidden</code></h3><p>तत्व को सामान्य रूप से पेज पर दिखने से छिपाता है।</p><pre><code>&lt;p hidden&gt;छिपी सामग्री&lt;/p&gt;</code></pre></div>
-<div class="tag-item"><h3><code>dir</code></h3><p>टेक्स्ट की दिशा निर्धारित करता है, जैसे बाएँ से दाएँ या दाएँ से बाएँ।</p><pre><code>&lt;p dir="ltr"&gt;Hello&lt;/p&gt;
-&lt;p dir="rtl"&gt;مرحبا&lt;/p&gt;</code></pre></div>
-<div class="tag-item"><h3><code>data-*</code></h3><p>तत्व में अपनी अतिरिक्त डेटा जानकारी रखने के लिए।</p><pre><code>&lt;p data-level="1"&gt;स्तर 1&lt;/p&gt;</code></pre></div>
-<div class="tag-item"><h3><code>contenteditable</code></h3><p>तत्व की सामग्री को ब्राउज़र में संपादित करने योग्य बनाता है।</p><pre><code>&lt;p contenteditable="true"&gt;
-  यहाँ लिखें
-&lt;/p&gt;</code></pre></div>
-<div class="tag-item"><h3><code>tabindex</code></h3><p>कीबोर्ड से तत्व पर जाने का क्रम निर्धारित करने में मदद करता है।</p><pre><code>&lt;button tabindex="0"&gt;क्लिक&lt;/button&gt;</code></pre></div>
-</div>
+            <h3>3. &lt;head&gt;</h3>
+            <p>पेज की जानकारी, टाइटल और CSS जैसी चीजें रखता है।</p>
 
-<div class="warning"><strong>ध्यान दें:</strong> हर HTML तत्व पर हर Attribute मान्य नहीं होता। Attributes का उपयोग संबंधित तत्व के नियमों के अनुसार करें।</div>
-</section>
+            <h3>4. &lt;title&gt;</h3>
+            <p>ब्राउज़र टैब में दिखाई देने वाला नाम तय करता है।</p>
 
-<!-- भाग 2 -->
-<section class="card part" id="part2">
-<h2>📗 भाग 2: Headings, Paragraph और Formatting</h2>
+            <h3>5. &lt;meta&gt;</h3>
+            <p>पेज के बारे में अतिरिक्त जानकारी देता है, जैसे कैरेक्टर सेट और मोबाइल स्क्रीन सेटिंग।</p>
 
-<h3>1. Heading टैग: <code>&lt;h1&gt;</code> से <code>&lt;h6&gt;</code></h3>
-<p>शीर्षक बनाने के लिए छह स्तर के Heading टैग होते हैं। <code>&lt;h1&gt;</code> सबसे ऊँचा स्तर है और <code>&lt;h6&gt;</code> सबसे निचला।</p>
-<pre><code>&lt;h1&gt;मुख्य शीर्षक&lt;/h1&gt;
-&lt;h2&gt;दूसरा स्तर&lt;/h2&gt;
-&lt;h3&gt;तीसरा स्तर&lt;/h3&gt;
-&lt;h4&gt;चौथा स्तर&lt;/h4&gt;
-&lt;h5&gt;पाँचवाँ स्तर&lt;/h5&gt;
-&lt;h6&gt;छठा स्तर&lt;/h6&gt;</code></pre>
+            <h3>6. &lt;body&gt;</h3>
+            <p>पेज पर दिखाई देने वाली मुख्य सामग्री रखता है।</p>
 
-<h3>2. Paragraph: <code>&lt;p&gt;</code></h3>
-<p>पैराग्राफ बनाने के लिए उपयोग होता है।</p>
-<pre><code>&lt;p&gt;यह पहला पैराग्राफ है।&lt;/p&gt;
-&lt;p&gt;यह दूसरा पैराग्राफ है।&lt;/p&gt;</code></pre>
+            <div class="highlight">
+                ध्यान दें: <code>&lt;!DOCTYPE html&gt;</code> एक घोषणा है,
+                सामान्य HTML टैग नहीं।
+            </div>
+        </article>
 
-<h3>3. Line Break: <code>&lt;br&gt;</code></h3>
-<p>टेक्स्ट में लाइन बदलने के लिए।</p>
-<pre><code>राम&lt;br&gt;
-श्याम&lt;br&gt;
-मोहन</code></pre>
+        <article class="lesson">
+            <h2>पाठ 2: Heading और Paragraph Tags</h2>
 
-<h3>4. Horizontal Rule: <code>&lt;hr&gt;</code></h3>
-<p>विषयों के बीच विषयगत विभाजन दिखाता है, जो सामान्यतः रेखा के रूप में दिखता है।</p>
-<pre><code>&lt;p&gt;पहला विषय&lt;/p&gt;
-&lt;hr&gt;
-&lt;p&gt;दूसरा विषय&lt;/p&gt;</code></pre>
+            <h3>Heading Tags</h3>
+            <p>
+                <code>&lt;h1&gt;</code> से <code>&lt;h6&gt;</code> तक
+                छह स्तर की headings होती हैं।
+            </p>
 
-<h3>5. Text Formatting टैग</h3>
-<div class="tag-list">
-<div class="tag-item"><h3><code>&lt;strong&gt;</code></h3><p>महत्वपूर्ण टेक्स्ट दर्शाता है।</p><pre><code>&lt;strong&gt;सावधान रहें&lt;/strong&gt;
-&lt;strong&gt;जरूरी सूचना&lt;/strong&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;em&gt;</code></h3><p>टेक्स्ट पर जोर देता है।</p><pre><code>&lt;em&gt;इसे याद रखें&lt;/em&gt;
-&lt;em&gt;यह जरूरी है&lt;/em&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;b&gt;</code></h3><p>ध्यान खींचने के लिए टेक्स्ट को बोल्ड दिखाता है।</p><pre><code>&lt;b&gt;बोल्ड टेक्स्ट&lt;/b&gt;
-&lt;b&gt;विशेष शब्द&lt;/b&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;i&gt;</code></h3><p>अलग स्वर या शैली वाले टेक्स्ट को इटैलिक दिखाता है।</p><pre><code>&lt;i&gt;इटैलिक टेक्स्ट&lt;/i&gt;
-&lt;i&gt;दूसरा उदाहरण&lt;/i&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;u&gt;</code></h3><p>ऐसा टेक्स्ट दिखाता है जिस पर गैर-पारंपरिक टिप्पणी या रेखांकन हो।</p><pre><code>&lt;u&gt;रेखांकित शब्द&lt;/u&gt;
-&lt;u&gt;दूसरा शब्द&lt;/u&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;mark&gt;</code></h3><p>संदर्भ के लिए हाइलाइट किए गए टेक्स्ट को दर्शाता है।</p><pre><code>&lt;mark&gt;महत्वपूर्ण शब्द&lt;/mark&gt;
-&lt;mark&gt;खोज का परिणाम&lt;/mark&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;small&gt;</code></h3><p>छोटी लिखावट या साइड नोट दर्शाता है।</p><pre><code>&lt;small&gt;नियम लागू हैं&lt;/small&gt;
-&lt;small&gt;अतिरिक्त सूचना&lt;/small&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;del&gt;</code></h3><p>हटाए गए टेक्स्ट को दर्शाता है।</p><pre><code>&lt;del&gt;₹500&lt;/del&gt;
-&lt;del&gt;पुरानी जानकारी&lt;/del&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;ins&gt;</code></h3><p>जोड़े गए टेक्स्ट को दर्शाता है।</p><pre><code>&lt;ins&gt;नई जानकारी&lt;/ins&gt;
-&lt;ins&gt;₹400&lt;/ins&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;sub&gt;</code></h3><p>Subscript यानी नीचे छोटा टेक्स्ट।</p><pre><code>H&lt;sub&gt;2&lt;/sub&gt;O
-CO&lt;sub&gt;2&lt;/sub&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;sup&gt;</code></h3><p>Superscript यानी ऊपर छोटा टेक्स्ट।</p><pre><code>x&lt;sup&gt;2&lt;/sup&gt;
-10&lt;sup&gt;th&lt;/sup&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;abbr&gt;</code></h3><p>संक्षिप्त नाम या abbreviation बताता है।</p><pre><code>&lt;abbr title="HyperText Markup Language"&gt;
-HTML
-&lt;/abbr&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;q&gt;</code></h3><p>छोटा इनलाइन उद्धरण दर्शाता है।</p><pre><code>&lt;q&gt;समय अमूल्य है।&lt;/q&gt;
-&lt;q&gt;सत्य की जीत होती है।&lt;/q&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;blockquote&gt;</code></h3><p>लंबा उद्धरण अलग ब्लॉक में दिखाता है।</p><pre><code>&lt;blockquote&gt;
-  शिक्षा जीवन बदल सकती है।
-&lt;/blockquote&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;cite&gt;</code></h3><p>किसी रचना या कार्य का शीर्षक दर्शाता है।</p><pre><code>&lt;cite&gt;पुस्तक का नाम&lt;/cite&gt;
-&lt;cite&gt;कविता का नाम&lt;/cite&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;code&gt;</code></h3><p>कंप्यूटर कोड का छोटा भाग दर्शाता है।</p><pre><code>&lt;code&gt;let x = 5;&lt;/code&gt;
-&lt;code&gt;print("Hello")&lt;/code&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;pre&gt;</code></h3><p>स्पेस और लाइन ब्रेक सहित पहले से व्यवस्थित टेक्स्ट दिखाता है।</p><pre><code>&lt;pre&gt;
-पहली लाइन
-  दूसरी लाइन
-&lt;/pre&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;kbd&gt;</code></h3><p>कीबोर्ड से दिए जाने वाले इनपुट को दर्शाता है।</p><pre><code>&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;
-&lt;kbd&gt;Enter&lt;/kbd&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;samp&gt;</code></h3><p>कंप्यूटर प्रोग्राम के नमूना आउटपुट को दर्शाता है।</p><pre><code>&lt;samp&gt;कार्य पूरा हुआ&lt;/samp&gt;
-&lt;samp&gt;Error&lt;/samp&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;var&gt;</code></h3><p>गणित या प्रोग्रामिंग में किसी चर को दर्शाता है।</p><pre><code>&lt;var&gt;x&lt;/var&gt; = 10
-&lt;var&gt;y&lt;/var&gt; = 20</code></pre></div>
-<div class="tag-item"><h3><code>&lt;wbr&gt;</code></h3><p>लंबे शब्द में जरूरत पड़ने पर लाइन तोड़ने का संभावित स्थान बताता है।</p><pre><code>बहुतलंबाशब्द&lt;wbr&gt;आगे</code></pre></div>
-<div class="tag-item"><h3><code>&lt;bdi&gt;</code></h3><p>मिश्रित भाषा में टेक्स्ट की दिशा को अलग रखने में मदद करता है।</p><pre><code>&lt;bdi&gt;علي&lt;/bdi&gt;
-&lt;bdi&gt;राम&lt;/bdi&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;bdo&gt;</code></h3><p>टेक्स्ट की दिशा स्पष्ट रूप से बदलता है।</p><pre><code>&lt;bdo dir="rtl"&gt;Hello&lt;/bdo&gt;
-&lt;bdo dir="ltr"&gt;नमस्ते&lt;/bdo&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;data&gt;</code></h3><p>दिखने वाले टेक्स्ट को मशीन-पठनीय मान से जोड़ता है।</p><pre><code>&lt;data value="101"&gt;उत्पाद A&lt;/data&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;time&gt;</code></h3><p>समय या तारीख को मशीन-पठनीय रूप में बताता है।</p><pre><code>&lt;time datetime="2026-10-24"&gt;
-24 अक्टूबर 2026
-&lt;/time&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;ruby&gt;</code>, <code>&lt;rt&gt;</code>, <code>&lt;rp&gt;</code></h3><p>पूर्वी एशियाई लेखन में उच्चारण संबंधी टिप्पणियाँ दिखाने के लिए।</p><pre><code>&lt;ruby&gt;漢&lt;rt&gt;kan&lt;/rt&gt;&lt;/ruby&gt;
-&lt;ruby&gt;字&lt;rp&gt;(&lt;/rp&gt;
-&lt;rt&gt;ji&lt;/rt&gt;&lt;rp&gt;)&lt;/rp&gt;&lt;/ruby&gt;</code></pre></div>
-</div>
+            <pre><code>&lt;h1&gt;सबसे मुख्य शीर्षक&lt;/h1&gt;
+&lt;h2&gt;दूसरा शीर्षक&lt;/h2&gt;
+&lt;h3&gt;तीसरा शीर्षक&lt;/h3&gt;
+&lt;h4&gt;चौथा शीर्षक&lt;/h4&gt;
+&lt;h5&gt;पाँचवाँ शीर्षक&lt;/h5&gt;
+&lt;h6&gt;छठा शीर्षक&lt;/h6&gt;</code></pre>
 
-<div class="note"><strong>याद रखने योग्य:</strong> <code>&lt;b&gt;</code> और <code>&lt;strong&gt;</code> एक जैसे अर्थ नहीं रखते। इसी तरह <code>&lt;i&gt;</code> और <code>&lt;em&gt;</code> का उपयोग भी अलग है।</div>
-</section>
+            <h3>Paragraph Tag</h3>
+            <p><code>&lt;p&gt;</code> का उपयोग पैराग्राफ लिखने के लिए होता है।</p>
 
-<!-- भाग 3 -->
-<section class="card part" id="part3">
-<h2>📙 भाग 3: Links और Images</h2>
+            <pre><code>&lt;p&gt;यह एक पैराग्राफ है।&lt;/p&gt;</code></pre>
 
-<h3>1. Link: <code>&lt;a&gt;</code></h3>
-<p>किसी दूसरे पेज, वेबसाइट, ईमेल या पेज के किसी हिस्से पर जाने के लिए लिंक बनाया जाता है।</p>
-<pre><code>&lt;a href="about.html"&gt;हमारे बारे में&lt;/a&gt;
+            <h3>Line Break और Horizontal Rule</h3>
+            <p><code>&lt;br&gt;</code> लाइन बदलता है और <code>&lt;hr&gt;</code> विषयों के बीच विभाजन दिखाता है।</p>
 
-&lt;a href="https://example.com"&gt;
-  वेबसाइट खोलें
-&lt;/a&gt;
+            <pre><code>पहली लाइन&lt;br&gt;
+दूसरी लाइन
 
-&lt;a href="#part1"&gt;भाग 1 पर जाएँ&lt;/a&gt;
+&lt;hr&gt;</code></pre>
+        </article>
 
-&lt;a href="mailto:hello@example.com"&gt;
-  ईमेल भेजें
+        <article class="lesson">
+            <h2>पाठ 3: Text Formatting Tags</h2>
+
+            <pre><code>&lt;b&gt;मोटा टेक्स्ट&lt;/b&gt;
+&lt;strong&gt;महत्त्वपूर्ण टेक्स्ट&lt;/strong&gt;
+&lt;i&gt;तिरछा टेक्स्ट&lt;/i&gt;
+&lt;em&gt;जोर देकर लिखा टेक्स्ट&lt;/em&gt;
+&lt;u&gt;रेखांकित टेक्स्ट&lt;/u&gt;
+&lt;mark&gt;हाइलाइट किया टेक्स्ट&lt;/mark&gt;
+&lt;small&gt;छोटा टेक्स्ट&lt;/small&gt;
+&lt;del&gt;हटाया गया टेक्स्ट&lt;/del&gt;
+&lt;ins&gt;जोड़ा गया टेक्स्ट&lt;/ins&gt;
+H&lt;sub&gt;2&lt;/sub&gt;O
+x&lt;sup&gt;2&lt;/sup&gt;</code></pre>
+
+            <p><code>&lt;b&gt;</code> टेक्स्ट को मोटा दिखाता है, जबकि <code>&lt;strong&gt;</code> महत्त्व भी दर्शाता है।</p>
+
+            <p><code>&lt;i&gt;</code> टेक्स्ट को अलग शैली में दिखाता है, जबकि <code>&lt;em&gt;</code> जोर दर्शाता है।</p>
+        </article>
+
+        <article class="lesson">
+            <h2>पाठ 4: Link, Image और Lists</h2>
+
+            <h3>Link Tag</h3>
+            <p><code>&lt;a&gt;</code> किसी दूसरे पेज या वेबसाइट का लिंक बनाता है।</p>
+
+            <pre><code>&lt;a href="https://example.com"&gt;
+    वेबसाइट खोलें
 &lt;/a&gt;</code></pre>
 
-<h3>2. Link के जरूरी Attributes</h3>
-<div class="tag-list">
-<div class="tag-item"><h3><code>href</code></h3><p>लिंक का पता बताता है।</p><pre><code>&lt;a href="about.html"&gt;परिचय&lt;/a&gt;
-&lt;a href="#home"&gt;होम&lt;/a&gt;</code></pre></div>
-<div class="tag-item"><h3><code>target</code></h3><p>लिंक कहाँ खुलेगा, यह बताता है।</p><pre><code>&lt;a href="about.html"
-target="_self"&gt;इसी टैब में&lt;/a&gt;
+            <h3>Image Tag</h3>
+            <p><code>&lt;img&gt;</code> पेज पर तस्वीर दिखाता है। <code>src</code> तस्वीर का पता और <code>alt</code> उसका वैकल्पिक विवरण देता है।</p>
 
-&lt;a href="https://example.com"
-target="_blank"
-rel="noopener"&gt;नए टैब में&lt;/a&gt;</code></pre></div>
-<div class="tag-item"><h3><code>rel</code></h3><p>वर्तमान पेज और लिंक किए गए पेज के संबंध का प्रकार बताता है।</p><pre><code>&lt;a href="https://example.com"
-rel="noopener"&gt;वेबसाइट&lt;/a&gt;</code></pre></div>
-<div class="tag-item"><h3><code>download</code></h3><p>ब्राउज़र को लिंक की सामग्री डाउनलोड करने का संकेत देता है।</p><pre><code>&lt;a href="notes.pdf"
-download&gt;नोट्स डाउनलोड करें&lt;/a&gt;</code></pre></div>
-<div class="tag-item"><h3><code>hreflang</code></h3><p>लिंक किए गए दस्तावेज़ की भाषा बताता है।</p><pre><code>&lt;a href="english.html"
-hreflang="en"&gt;English&lt;/a&gt;</code></pre></div>
-<div class="tag-item"><h3><code>type</code></h3><p>लिंक किए गए संसाधन के संभावित मीडिया प्रकार का संकेत देता है।</p><pre><code>&lt;a href="notes.pdf"
-type="application/pdf"&gt;PDF नोट्स&lt;/a&gt;</code></pre></div>
-</div>
+            <pre><code>&lt;img src="photo.jpg"
+     alt="एक सुंदर तस्वीर"
+     width="200"&gt;</code></pre>
 
-<h3>3. Image: <code>&lt;img&gt;</code></h3>
-<p>चित्र दिखाने के लिए <code>&lt;img&gt;</code> उपयोग होता है। यह खाली तत्व है।</p>
-<pre><code>&lt;img src="flower.jpg"
-     alt="गुलाब का फूल"
-     width="200"
-     height="150"&gt;
-
-&lt;img src="school.jpg"
-     alt="स्कूल की इमारत"
-     loading="lazy"&gt;</code></pre>
-
-<h3>4. Image के Attributes</h3>
-<div class="tag-list">
-<div class="tag-item"><h3><code>src</code></h3><p>चित्र की फ़ाइल या URL बताता है।</p><pre><code>&lt;img src="photo.jpg" alt="चित्र"&gt;</code></pre></div>
-<div class="tag-item"><h3><code>alt</code></h3><p>चित्र का अर्थ बताने वाला टेक्स्ट देता है, खासकर स्क्रीन रीडर या चित्र न खुलने पर। सजावटी चित्र के लिए खाली alt उचित हो सकता है।</p><pre><code>&lt;img src="tree.jpg"
-alt="हरा पेड़"&gt;</code></pre></div>
-<div class="tag-item"><h3><code>width</code> और <code>height</code></h3><p>चित्र की चौड़ाई और ऊँचाई निर्धारित करते हैं।</p><pre><code>&lt;img src="photo.jpg"
-alt="चित्र" width="300" height="200"&gt;</code></pre></div>
-<div class="tag-item"><h3><code>loading</code></h3><p>चित्र को कब लोड करना है, उसका संकेत देता है।</p><pre><code>&lt;img src="photo.jpg"
-alt="चित्र" loading="lazy"&gt;</code></pre></div>
-<div class="tag-item"><h3><code>srcset</code></h3><p>अलग स्क्रीन या रिज़ॉल्यूशन के लिए चित्रों के विकल्प देता है।</p><pre><code>&lt;img
-src="small.jpg"
-srcset="large.jpg 1200w"
-sizes="100vw"
-alt="पहाड़"&gt;</code></pre></div>
-<div class="tag-item"><h3><code>usemap</code></h3><p>चित्र को क्लिक करने योग्य क्षेत्रों वाले image map से जोड़ता है।</p><pre><code>&lt;img src="map.jpg"
-alt="नक्शा" usemap="#m"&gt;
-&lt;map name="m"&gt;
-  &lt;area shape="rect"
-  coords="0,0,100,100"
-  href="about.html" alt="जानकारी"&gt;
-&lt;/map&gt;</code></pre></div>
-</div>
-
-<h3>5. <code>&lt;figure&gt;</code> और <code>&lt;figcaption&gt;</code></h3>
-<p>चित्र या अन्य सामग्री के साथ उसका कैप्शन रखने के लिए।</p>
-<pre><code>&lt;figure&gt;
-  &lt;img src="flower.jpg" alt="गुलाब"&gt;
-  &lt;figcaption&gt;गुलाब का फूल&lt;/figcaption&gt;
-&lt;/figure&gt;</code></pre>
-
-<h3>6. <code>&lt;picture&gt;</code> और <code>&lt;source&gt;</code></h3>
-<p>अलग स्क्रीन या अलग फ़ॉर्मेट के लिए उपयुक्त चित्र चुनने में मदद करते हैं।</p>
-<pre><code>&lt;picture&gt;
-  &lt;source media="(max-width: 600px)"
-          srcset="small.jpg"&gt;
-  &lt;source type="image/webp"
-          srcset="photo.webp"&gt;
-  &lt;img src="photo.jpg"
-       alt="प्रकृति का दृश्य"&gt;
-&lt;/picture&gt;</code></pre>
-
-<p class="note">महत्वपूर्ण: <code>&lt;source&gt;</code> को <code>&lt;picture&gt;</code> में विकल्प देने के लिए इस्तेमाल किया जा सकता है। इसका उपयोग <code>&lt;audio&gt;</code> और <code>&lt;video&gt;</code> में भी होता है।</p>
-
-<h3>7. Image Map: <code>&lt;map&gt;</code> और <code>&lt;area&gt;</code></h3>
-<p>चित्र के अलग-अलग हिस्सों को अलग लिंक बनाने के लिए।</p>
-<pre><code>&lt;img src="map.jpg" usemap="#places"
-alt="जगहों का नक्शा"&gt;
-
-&lt;map name="places"&gt;
-  &lt;area shape="rect"
-        coords="0,0,100,100"
-        href="city.html"
-        alt="शहर"&gt;
-&lt;/map&gt;</code></pre>
-<p>इस उदाहरण में सही काम करने के लिए वास्तविक चित्र और उसके अनुसार coordinates देना जरूरी है।</p>
-</section>
-
-<!-- भाग 4 -->
-<section class="card part" id="part4">
-<h2>📕 भाग 4: HTML Lists (सूचियाँ)</h2>
-<p>सूचियों का उपयोग कई वस्तुओं या बिंदुओं को व्यवस्थित रूप से दिखाने के लिए होता है।</p>
-
-<h3>1. Unordered List: <code>&lt;ul&gt;</code></h3>
-<p>बिना क्रम वाली सूची बनाता है, जिसमें सामान्यतः बुलेट दिखाई देते हैं।</p>
-<pre><code>&lt;ul&gt;
-  &lt;li&gt;सेब&lt;/li&gt;
-  &lt;li&gt;आम&lt;/li&gt;
-  &lt;li&gt;केला&lt;/li&gt;
+            <h3>Unordered List</h3>
+            <pre><code>&lt;ul&gt;
+    &lt;li&gt;सेब&lt;/li&gt;
+    &lt;li&gt;आम&lt;/li&gt;
 &lt;/ul&gt;</code></pre>
 
-<h3>2. Ordered List: <code>&lt;ol&gt;</code></h3>
-<p>क्रम वाली सूची बनाता है, जैसे 1, 2, 3।</p>
-<pre><code>&lt;ol&gt;
-  &lt;li&gt;पहला कदम&lt;/li&gt;
-  &lt;li&gt;दूसरा कदम&lt;/li&gt;
-  &lt;li&gt;तीसरा कदम&lt;/li&gt;
+            <h3>Ordered List</h3>
+            <pre><code>&lt;ol&gt;
+    &lt;li&gt;पहला कदम&lt;/li&gt;
+    &lt;li&gt;दूसरा कदम&lt;/li&gt;
 &lt;/ol&gt;</code></pre>
 
-<h3>3. List Item: <code>&lt;li&gt;</code></h3>
-<p>Ordered या unordered list में एक वस्तु या बिंदु बनाता है।</p>
-<pre><code>&lt;ul&gt;
-  &lt;li&gt;हिंदी&lt;/li&gt;
-  &lt;li&gt;अंग्रेजी&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;पढ़ें&lt;/li&gt;
-  &lt;li&gt;अभ्यास करें&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
-
-<h3>4. Description List: <code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code></h3>
-<p>किसी शब्द और उसके विवरण को दिखाने के लिए।</p>
-<pre><code>&lt;dl&gt;
-  &lt;dt&gt;HTML&lt;/dt&gt;
-  &lt;dd&gt;वेब पेज की संरचना बनाता है।&lt;/dd&gt;
-
-  &lt;dt&gt;CSS&lt;/dt&gt;
-  &lt;dd&gt;वेब पेज को सजाता है।&lt;/dd&gt;
+            <h3>Description List</h3>
+            <pre><code>&lt;dl&gt;
+    &lt;dt&gt;HTML&lt;/dt&gt;
+    &lt;dd&gt;वेब पेज बनाने की भाषा&lt;/dd&gt;
 &lt;/dl&gt;</code></pre>
+        </article>
 
-<h3>5. Ordered List के Attributes</h3>
-<div class="tag-list">
-<div class="tag-item"><h3><code>type</code></h3><p>क्रम के अंक या अक्षर का प्रकार चुनता है।</p><pre><code>&lt;ol type="A"&gt;
-  &lt;li&gt;पहला&lt;/li&gt;
-  &lt;li&gt;दूसरा&lt;/li&gt;
-&lt;/ol&gt;</code></pre></div>
-<div class="tag-item"><h3><code>start</code></h3><p>सूची की शुरुआत का क्रमांक निर्धारित करता है।</p><pre><code>&lt;ol start="5"&gt;
-  &lt;li&gt;पाँच&lt;/li&gt;
-  &lt;li&gt;छह&lt;/li&gt;
-&lt;/ol&gt;</code></pre></div>
-<div class="tag-item"><h3><code>reversed</code></h3><p>क्रम को उल्टा गिनता है।</p><pre><code>&lt;ol reversed&gt;
-  &lt;li&gt;तीन&lt;/li&gt;
-  &lt;li&gt;दो&lt;/li&gt;
-  &lt;li&gt;एक&lt;/li&gt;
-&lt;/ol&gt;</code></pre></div>
-<div class="tag-item"><h3><code>value</code></h3><p><code>&lt;li&gt;</code> का क्रमांक निर्धारित करता है, खासकर ordered list में।</p><pre><code>&lt;ol&gt;
-  &lt;li&gt;एक&lt;/li&gt;
-  &lt;li value="5"&gt;पाँच&lt;/li&gt;
-&lt;/ol&gt;</code></pre></div>
-</div>
+        <article class="lesson">
+            <h2>पाठ 5: Table, Form और Semantic Tags</h2>
 
-<h3>6. Nested List (सूची के अंदर सूची)</h3>
-<pre><code>&lt;ul&gt;
-  &lt;li&gt;कंप्यूटर
-    &lt;ul&gt;
-      &lt;li&gt;HTML&lt;/li&gt;
-      &lt;li&gt;CSS&lt;/li&gt;
-    &lt;/ul&gt;
-  &lt;/li&gt;
-  &lt;li&gt;गणित&lt;/li&gt;
-&lt;/ul&gt;</code></pre>
-<div class="note">याद रखें: <code>&lt;li&gt;</code> को सही सूची के अंदर रखें। नई HTML में बुलेट का रूप बदलने के लिए CSS का उपयोग करना बेहतर है।</div>
-</section>
-
-<!-- भाग 5 -->
-<section class="card part" id="part5">
-<h2>📒 भाग 5: HTML Tables (टेबल)</h2>
-<p>टेबल का उपयोग पंक्तियों और कॉलम में व्यवस्थित डेटा दिखाने के लिए होता है।</p>
-
-<h3>1. एक साधारण टेबल</h3>
-<pre><code>&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th&gt;नाम&lt;/th&gt;
-    &lt;th&gt;अंक&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;राम&lt;/td&gt;
-    &lt;td&gt;90&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;सीता&lt;/td&gt;
-    &lt;td&gt;95&lt;/td&gt;
-  &lt;/tr&gt;
+            <h3>Table</h3>
+            <pre><code>&lt;table&gt;
+    &lt;caption&gt;विद्यार्थियों की सूची&lt;/caption&gt;
+    &lt;tr&gt;
+        &lt;th&gt;नाम&lt;/th&gt;
+        &lt;th&gt;कक्षा&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;राम&lt;/td&gt;
+        &lt;td&gt;10&lt;/td&gt;
+    &lt;/tr&gt;
 &lt;/table&gt;</code></pre>
 
-<h3>2. Table के प्रमुख टैग</h3>
-<div class="tag-list">
-<div class="tag-item"><h3><code>&lt;table&gt;</code></h3><p>टेबल बनाता है।</p><pre><code>&lt;table&gt;
-  ...
-&lt;/table&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;caption&gt;</code></h3><p>टेबल का शीर्षक या कैप्शन देता है।</p><pre><code>&lt;table&gt;
-  &lt;caption&gt;परीक्षा परिणाम&lt;/caption&gt;
-&lt;/table&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;tr&gt;</code></h3><p>टेबल की एक पंक्ति बनाता है।</p><pre><code>&lt;tr&gt;
-  &lt;td&gt;राम&lt;/td&gt;
-  &lt;td&gt;90&lt;/td&gt;
-&lt;/tr&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;th&gt;</code></h3><p>हेडर सेल बनाता है, जैसे कॉलम का नाम।</p><pre><code>&lt;th scope="col"&gt;नाम&lt;/th&gt;
-&lt;th scope="col"&gt;अंक&lt;/th&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;td&gt;</code></h3><p>सामान्य डेटा सेल बनाता है।</p><pre><code>&lt;td&gt;राम&lt;/td&gt;
-&lt;td&gt;90&lt;/td&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;thead&gt;</code></h3><p>टेबल की हेडर पंक्तियों का समूह बनाता है।</p><pre><code>&lt;thead&gt;
-  &lt;tr&gt;&lt;th&gt;नाम&lt;/th&gt;&lt;/tr&gt;
-&lt;/thead&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;tbody&gt;</code></h3><p>टेबल की मुख्य डेटा पंक्तियों का समूह बनाता है।</p><pre><code>&lt;tbody&gt;
-  &lt;tr&gt;&lt;td&gt;राम&lt;/td&gt;&lt;/tr&gt;
-&lt;/tbody&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;tfoot&gt;</code></h3><p>टेबल की सारांश या अंतिम पंक्तियों का समूह बनाता है।</p><pre><code>&lt;tfoot&gt;
-  &lt;tr&gt;&lt;td&gt;कुल&lt;/td&gt;&lt;/tr&gt;
-&lt;/tfoot&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;colgroup&gt;</code></h3><p>एक या अधिक कॉलम के समूह पर गुण लागू करने के लिए।</p><pre><code>&lt;table&gt;
-  &lt;colgroup&gt;
-    &lt;col span="2"&gt;
-  &lt;/colgroup&gt;
-&lt;/table&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;col&gt;</code></h3><p>कॉलम के समूह के लिए गुण निर्धारित करता है।</p><pre><code>&lt;colgroup&gt;
-  &lt;col span="1"&gt;
-&lt;/colgroup&gt;</code></pre></div>
-</div>
+            <p><code>&lt;table&gt;</code> तालिका, <code>&lt;tr&gt;</code> पंक्ति, <code>&lt;th&gt;</code> शीर्षक सेल और <code>&lt;td&gt;</code> सामान्य सेल बनाता है।</p>
 
-<h3>3. colspan और rowspan</h3>
-<p><code>colspan</code> किसी सेल को कई कॉलम में फैलाता है। <code>rowspan</code> किसी सेल को कई पंक्तियों में फैलाता है।</p>
-<pre><code>&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th colspan="2"&gt;विद्यार्थी विवरण&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td rowspan="2"&gt;राम&lt;/td&gt;
-    &lt;td&gt;कक्षा 10&lt;/td&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td&gt;अंक 90&lt;/td&gt;
-  &lt;/tr&gt;
+            <h3>Form</h3>
+            <pre><code>&lt;form&gt;
+    &lt;label for="name"&gt;नाम:&lt;/label&gt;
+    &lt;input id="name" name="name" type="text"&gt;
+    &lt;button type="submit"&gt;भेजें&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+            <p><code>&lt;form&gt;</code> उपयोगकर्ता से जानकारी लेने के लिए होता है।</p>
+
+            <h3>Semantic Tags</h3>
+            <p>
+                <code>&lt;header&gt;</code> शीर्ष भाग,
+                <code>&lt;nav&gt;</code> नेविगेशन,
+                <code>&lt;main&gt;</code> मुख्य सामग्री,
+                <code>&lt;section&gt;</code> विषय का भाग,
+                <code>&lt;article&gt;</code> स्वतंत्र सामग्री,
+                <code>&lt;aside&gt;</code> संबंधित अतिरिक्त सामग्री और
+                <code>&lt;footer&gt;</code> अंतिम भाग दर्शाते हैं।
+            </p>
+        </article>
+    </section>
+
+    <section id="all-tags" class="lesson">
+        <h2>HTML Tags की सूची और उनके उपयोग</h2>
+
+        <p>
+            किसी टैग को खोजने के लिए नीचे सर्च बॉक्स में उसका नाम लिखो।
+            यह सूची में मौजूद टैगों को खोजेगा।
+        </p>
+
+        <input
+            type="search"
+            id="tagSearch"
+            class="search-box"
+            placeholder="जैसे: img, form, table, video..."
+            aria-label="HTML टैग खोजें">
+
+        <div id="tagList" class="tag-grid">
+
+            <article class="tag-card tag-item">
+                <h3>&lt;a&gt;</h3>
+                <p>दूसरे पेज या वेबसाइट का लिंक बनाता है।</p>
+                <pre><code>&lt;a href="page.html"&gt;खोलें&lt;/a&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;abbr&gt;</h3>
+                <p>किसी संक्षिप्त शब्द का पूरा अर्थ बताने में उपयोग होता है।</p>
+                <pre><code>&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;address&gt;</h3>
+                <p>संपर्क जानकारी के लिए उपयोग होता है।</p>
+                <pre><code>&lt;address&gt;संपर्क: example@example.com&lt;/address&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;area&gt;</h3>
+                <p>Image map में किसी क्षेत्र को क्लिक करने योग्य बनाता है।</p>
+                <pre><code>&lt;area shape="rect" coords="0,0,100,100" href="page.html" alt="पेज"&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;article&gt;</h3>
+                <p>स्वतंत्र लेख या सामग्री दर्शाता है।</p>
+                <pre><code>&lt;article&gt;लेख&lt;/article&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;aside&gt;</h3>
+                <p>मुख्य सामग्री से संबंधित अतिरिक्त जानकारी रखता है।</p>
+                <pre><code>&lt;aside&gt;अतिरिक्त जानकारी&lt;/aside&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;audio&gt;</h3>
+                <p>पेज पर ऑडियो चलाने के लिए उपयोग होता है।</p>
+                <pre><code>&lt;audio controls src="song.mp3"&gt;&lt;/audio&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;b&gt;</h3>
+                <p>टेक्स्ट को सामान्यतः मोटा दिखाता है।</p>
+                <pre><code>&lt;b&gt;मोटा टेक्स्ट&lt;/b&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;base&gt;</h3>
+                <p>डॉक्यूमेंट में सापेक्ष URLs का आधार तय करता है।</p>
+                <pre><code>&lt;base href="https://example.com/"&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;bdi&gt;</h3>
+                <p>अलग दिशा वाले टेक्स्ट को आसपास के टेक्स्ट से अलग रखता है।</p>
+                <pre><code>&lt;bdi&gt;नाम&lt;/bdi&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;bdo&gt;</h3>
+                <p>टेक्स्ट की दिशा बदलने के लिए उपयोग होता है।</p>
+                <pre><code>&lt;bdo dir="rtl"&gt;नमस्ते&lt;/bdo&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;blockquote&gt;</h3>
+                <p>लंबे उद्धरण को अलग दिखाता है।</p>
+                <pre><code>&lt;blockquote&gt;एक लंबा उद्धरण&lt;/blockquote&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;body&gt;</h3>
+                <p>वेब पेज की दिखाई देने वाली सामग्री रखता है।</p>
+                <pre><code>&lt;body&gt;पेज की सामग्री&lt;/body&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;br&gt;</h3>
+                <p>लाइन बदलता है।</p>
+                <pre><code>पहली लाइन&lt;br&gt;दूसरी लाइन</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;button&gt;</h3>
+                <p>क्लिक करने योग्य बटन बनाता है।</p>
+                <pre><code>&lt;button type="button"&gt;क्लिक करें&lt;/button&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;canvas&gt;</h3>
+                <p>JavaScript की मदद से ग्राफिक्स बनाने का क्षेत्र देता है।</p>
+                <pre><code>&lt;canvas id="myCanvas" width="200" height="100"&gt;&lt;/canvas&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;caption&gt;</h3>
+                <p>टेबल का शीर्षक देता है।</p>
+                <pre><code>&lt;caption&gt;विद्यार्थी सूची&lt;/caption&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;cite&gt;</h3>
+                <p>किसी रचना या कार्य का शीर्षक दर्शाता है।</p>
+                <pre><code>&lt;cite&gt;पुस्तक का नाम&lt;/cite&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;code&gt;</h3>
+                <p>कंप्यूटर कोड के छोटे हिस्से को दर्शाता है।</p>
+                <pre><code>&lt;code&gt;print("Hello")&lt;/code&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;col&gt; और &lt;colgroup&gt;</h3>
+                <p>टेबल के कॉलम समूह और कॉलम की विशेषताएँ तय करते हैं।</p>
+                <pre><code>&lt;colgroup&gt;&lt;col&gt;&lt;/colgroup&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;data&gt;</h3>
+                <p>दिखाई देने वाले टेक्स्ट के साथ मशीन-पठनीय मान देता है।</p>
+                <pre><code>&lt;data value="101"&gt;उत्पाद&lt;/data&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;datalist&gt;</h3>
+                <p>इनपुट के लिए सुझाए गए विकल्प देता है।</p>
+                <pre><code>&lt;input list="cities"&gt;
+&lt;datalist id="cities"&gt;
+&lt;option value="दिल्ली"&gt;
+&lt;option value="आगरा"&gt;
+&lt;/datalist&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;dd&gt;, &lt;dt&gt;, &lt;dl&gt;</h3>
+                <p>विवरण सूची, उसका शब्द और उसका विवरण बनाते हैं।</p>
+                <pre><code>&lt;dl&gt;&lt;dt&gt;HTML&lt;/dt&gt;&lt;dd&gt;Markup Language&lt;/dd&gt;&lt;/dl&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;del&gt;</h3>
+                <p>हटाए गए टेक्स्ट को दर्शाता है।</p>
+                <pre><code>&lt;del&gt;पुराना मूल्य&lt;/del&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;details&gt; और &lt;summary&gt;</h3>
+                <p>ऐसी सामग्री बनाते हैं जिसे उपयोगकर्ता खोल या बंद कर सकता है।</p>
+                <pre><code>&lt;details&gt;
+&lt;summary&gt;और पढ़ें&lt;/summary&gt;
+&lt;p&gt;अतिरिक्त जानकारी&lt;/p&gt;
+&lt;/details&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;dfn&gt;</h3>
+                <p>परिभाषित किए जा रहे शब्द को दर्शाता है।</p>
+                <pre><code>&lt;dfn&gt;HTML&lt;/dfn&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;dialog&gt;</h3>
+                <p>डायलॉग बॉक्स या संवाद विंडो बनाता है।</p>
+                <pre><code>&lt;dialog open&gt;नमस्ते!&lt;/dialog&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;div&gt;</h3>
+                <p>सामग्री को समूह में रखने वाला सामान्य ब्लॉक तत्व है।</p>
+                <pre><code>&lt;div&gt;यह एक समूह है&lt;/div&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;em&gt;</h3>
+                <p>टेक्स्ट पर जोर देता है।</p>
+                <pre><code>&lt;em&gt;महत्त्वपूर्ण शब्द&lt;/em&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;embed&gt;</h3>
+                <p>बाहरी सामग्री एम्बेड करता है।</p>
+                <pre><code>&lt;embed src="file.pdf" type="application/pdf"&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;fieldset&gt; और &lt;legend&gt;</h3>
+                <p>फॉर्म के संबंधित फ़ील्ड को समूह में रखते हैं और उसका शीर्षक देते हैं।</p>
+                <pre><code>&lt;fieldset&gt;
+&lt;legend&gt;व्यक्तिगत जानकारी&lt;/legend&gt;
+&lt;input type="text"&gt;
+&lt;/fieldset&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;figcaption&gt; और &lt;figure&gt;</h3>
+                <p>चित्र या उदाहरण सामग्री और उसके कैप्शन को समूह में रखते हैं।</p>
+                <pre><code>&lt;figure&gt;
+&lt;img src="photo.jpg" alt="चित्र"&gt;
+&lt;figcaption&gt;चित्र का विवरण&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;footer&gt;</h3>
+                <p>पेज या किसी सेक्शन का अंतिम भाग दर्शाता है।</p>
+                <pre><code>&lt;footer&gt;सभी अधिकार सुरक्षित&lt;/footer&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;form&gt;</h3>
+                <p>उपयोगकर्ता से जानकारी लेने वाला फॉर्म बनाता है।</p>
+                <pre><code>&lt;form&gt;&lt;input type="text"&gt;&lt;/form&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;h1&gt; से &lt;h6&gt;</h3>
+                <p>छह स्तर के शीर्षक बनाते हैं।</p>
+                <pre><code>&lt;h1&gt;मुख्य शीर्षक&lt;/h1&gt;
+&lt;h2&gt;उपशीर्षक&lt;/h2&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;head&gt;</h3>
+                <p>डॉक्यूमेंट की जानकारी रखता है।</p>
+                <pre><code>&lt;head&gt;&lt;title&gt;मेरा पेज&lt;/title&gt;&lt;/head&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;header&gt;</h3>
+                <p>पेज या सेक्शन का परिचयात्मक भाग दर्शाता है।</p>
+                <pre><code>&lt;header&gt;वेबसाइट का नाम&lt;/header&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;hgroup&gt;</h3>
+                <p>शीर्षक और उससे संबंधित उपशीर्षक को समूह में रखता है।</p>
+                <pre><code>&lt;hgroup&gt;&lt;h1&gt;शीर्षक&lt;/h1&gt;&lt;p&gt;उपशीर्षक&lt;/p&gt;&lt;/hgroup&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;hr&gt;</h3>
+                <p>विषय में बदलाव दर्शाने वाला विभाजन बनाता है।</p>
+                <pre><code>&lt;hr&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;html&gt;</h3>
+                <p>पूरे HTML डॉक्यूमेंट का मूल तत्व है।</p>
+                <pre><code>&lt;html lang="hi"&gt;...&lt;/html&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;i&gt;</h3>
+                <p>ऐसे टेक्स्ट को अलग शैली में दिखाता है, जैसे तकनीकी शब्द।</p>
+                <pre><code>&lt;i&gt;वैज्ञानिक शब्द&lt;/i&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;iframe&gt;</h3>
+                <p>दूसरे वेब पेज को वर्तमान पेज में एम्बेड करता है।</p>
+                <pre><code>&lt;iframe src="page.html" title="दूसरा पेज"&gt;&lt;/iframe&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;img&gt;</h3>
+                <p>वेब पेज पर तस्वीर दिखाता है।</p>
+                <pre><code>&lt;img src="photo.jpg" alt="तस्वीर"&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;input&gt;</h3>
+                <p>फॉर्म में टेक्स्ट, ईमेल, पासवर्ड और अन्य प्रकार का इनपुट लेता है।</p>
+                <pre><code>&lt;input type="text" placeholder="नाम लिखें"&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;ins&gt;</h3>
+                <p>जोड़े गए टेक्स्ट को दर्शाता है।</p>
+                <pre><code>&lt;ins&gt;नया टेक्स्ट&lt;/ins&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;kbd&gt;</h3>
+                <p>कीबोर्ड से दबाई जाने वाली कुंजी दर्शाता है।</p>
+                <pre><code>&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;S&lt;/kbd&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;label&gt;</h3>
+                <p>फॉर्म के इनपुट का नाम या विवरण देता है।</p>
+                <pre><code>&lt;label for="email"&gt;ईमेल&lt;/label&gt;
+&lt;input id="email" type="email"&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;legend&gt;</h3>
+                <p>Fieldset समूह का शीर्षक देता है।</p>
+                <pre><code>&lt;fieldset&gt;&lt;legend&gt;जानकारी&lt;/legend&gt;&lt;/fieldset&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;li&gt;</h3>
+                <p>सूची का एक आइटम बनाता है।</p>
+                <pre><code>&lt;ul&gt;&lt;li&gt;एक आइटम&lt;/li&gt;&lt;/ul&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;link&gt;</h3>
+                <p>CSS फ़ाइल जैसी बाहरी संसाधन फ़ाइल जोड़ता है।</p>
+                <pre><code>&lt;link rel="stylesheet" href="style.css"&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;main&gt;</h3>
+                <p>पेज की मुख्य और विशिष्ट सामग्री रखता है।</p>
+                <pre><code>&lt;main&gt;मुख्य सामग्री&lt;/main&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;map&gt;</h3>
+                <p>चित्र के क्लिक करने योग्य क्षेत्रों का समूह बनाता है।</p>
+                <pre><code>&lt;map name="picture"&gt;&lt;area shape="rect" coords="0,0,100,100" href="page.html" alt="पेज"&gt;&lt;/map&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;mark&gt;</h3>
+                <p>टेक्स्ट को हाइलाइट करता है।</p>
+                <pre><code>&lt;mark&gt;जरूरी बात&lt;/mark&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;menu&gt;</h3>
+                <p>आइटमों की सूची दर्शाता है।</p>
+                <pre><code>&lt;menu&gt;&lt;li&gt;विकल्प&lt;/li&gt;&lt;/menu&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;meta&gt;</h3>
+                <p>पेज की मेटाडेटा जानकारी देता है।</p>
+                <pre><code>&lt;meta charset="UTF-8"&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;meter&gt;</h3>
+                <p>किसी सीमा के भीतर माप दिखाता है।</p>
+                <pre><code>&lt;meter min="0" max="100" value="70"&gt;70%&lt;/meter&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;nav&gt;</h3>
+                <p>नेविगेशन लिंक का समूह दर्शाता है।</p>
+                <pre><code>&lt;nav&gt;&lt;a href="index.html"&gt;Home&lt;/a&gt;&lt;/nav&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;noscript&gt;</h3>
+                <p>JavaScript बंद होने पर वैकल्पिक सामग्री दिखाता है।</p>
+                <pre><code>&lt;noscript&gt;JavaScript चालू करें।&lt;/noscript&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;object&gt;</h3>
+                <p>बाहरी संसाधन, जैसे PDF, एम्बेड कर सकता है।</p>
+                <pre><code>&lt;object data="file.pdf" type="application/pdf"&gt;PDF उपलब्ध नहीं है&lt;/object&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;ol&gt;</h3>
+                <p>क्रम वाली सूची बनाता है।</p>
+                <pre><code>&lt;ol&gt;&lt;li&gt;पहला&lt;/li&gt;&lt;li&gt;दूसरा&lt;/li&gt;&lt;/ol&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;optgroup&gt;</h3>
+                <p>Select विकल्पों को समूह में रखता है।</p>
+                <pre><code>&lt;select&gt;
+&lt;optgroup label="फल"&gt;
+&lt;option&gt;सेब&lt;/option&gt;
+&lt;/optgroup&gt;
+&lt;/select&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;option&gt;</h3>
+                <p>Select सूची का विकल्प बनाता है।</p>
+                <pre><code>&lt;option value="delhi"&gt;दिल्ली&lt;/option&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;output&gt;</h3>
+                <p>किसी गणना या क्रिया का परिणाम दिखाता है।</p>
+                <pre><code>&lt;output&gt;परिणाम&lt;/output&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;p&gt;</h3>
+                <p>पैराग्राफ बनाता है।</p>
+                <pre><code>&lt;p&gt;यह पैराग्राफ है।&lt;/p&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;picture&gt;</h3>
+                <p>अलग स्क्रीन या परिस्थितियों के लिए अलग तस्वीरें उपलब्ध कराता है।</p>
+                <pre><code>&lt;picture&gt;
+&lt;source media="(max-width:600px)" srcset="small.jpg"&gt;
+&lt;img src="large.jpg" alt="तस्वीर"&gt;
+&lt;/picture&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;pre&gt;</h3>
+                <p>स्पेस और लाइन ब्रेक को सामान्यतः उसी तरह रखता है।</p>
+                <pre><code>&lt;pre&gt;पहली लाइन
+    दूसरी लाइन&lt;/pre&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;progress&gt;</h3>
+                <p>किसी काम की प्रगति दिखाता है।</p>
+                <pre><code>&lt;progress value="60" max="100"&gt;60%&lt;/progress&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;q&gt;</h3>
+                <p>छोटा इनलाइन उद्धरण दर्शाता है।</p>
+                <pre><code>&lt;q&gt;समय मूल्यवान है&lt;/q&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;ruby&gt;, &lt;rt&gt;, &lt;rp&gt;</h3>
+                <p>पूर्वी एशियाई लेखन में उच्चारण या टिप्पणी दिखाने में उपयोग होते हैं।</p>
+                <pre><code>&lt;ruby&gt;漢 &lt;rt&gt;kan&lt;/rt&gt;&lt;/ruby&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;s&gt;</h3>
+                <p>ऐसी जानकारी दिखाता है जो अब सही या प्रासंगिक नहीं है।</p>
+                <pre><code>&lt;s&gt;पुराना मूल्य&lt;/s&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;samp&gt;</h3>
+                <p>कंप्यूटर प्रोग्राम का नमूना आउटपुट दर्शाता है।</p>
+                <pre><code>&lt;samp&gt;File saved&lt;/samp&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;script&gt;</h3>
+                <p>JavaScript कोड या बाहरी स्क्रिप्ट जोड़ता है।</p>
+                <pre><code>&lt;script src="app.js"&gt;&lt;/script&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;search&gt;</h3>
+                <p>खोज से संबंधित सामग्री को semantic रूप से समूहित करता है।</p>
+                <pre><code>&lt;search&gt;&lt;input type="search" placeholder="खोजें"&gt;&lt;/search&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;section&gt;</h3>
+                <p>विषय से संबंधित सामग्री का एक भाग बनाता है।</p>
+                <pre><code>&lt;section&gt;&lt;h2&gt;परिचय&lt;/h2&gt;&lt;/section&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;select&gt;</h3>
+                <p>विकल्पों की सूची बनाता है।</p>
+                <pre><code>&lt;select&gt;&lt;option&gt;भारत&lt;/option&gt;&lt;/select&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;small&gt;</h3>
+                <p>छोटे अक्षरों में सहायक जानकारी दिखाता है।</p>
+                <pre><code>&lt;small&gt;नियम और शर्तें लागू&lt;/small&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;source&gt;</h3>
+                <p>Audio, video या picture के लिए संसाधन बताता है।</p>
+                <pre><code>&lt;source src="video.mp4" type="video/mp4"&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;span&gt;</h3>
+                <p>इनलाइन सामग्री को समूहित करता है।</p>
+                <pre><code>&lt;span&gt;विशेष शब्द&lt;/span&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;strong&gt;</h3>
+                <p>महत्त्वपूर्ण टेक्स्ट दर्शाता है।</p>
+                <pre><code>&lt;strong&gt;चेतावनी&lt;/strong&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;style&gt;</h3>
+                <p>HTML डॉक्यूमेंट में CSS लिखता है।</p>
+                <pre><code>&lt;style&gt;
+p { color: blue; }
+&lt;/style&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;sub&gt; और &lt;sup&gt;</h3>
+                <p>नीचे और ऊपर छोटे अक्षर या अंक दिखाते हैं।</p>
+                <pre><code>H&lt;sub&gt;2&lt;/sub&gt;O
+x&lt;sup&gt;2&lt;/sup&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;table&gt;</h3>
+                <p>तालिका बनाता है।</p>
+                <pre><code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;नाम&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code></pre>
+            </article>
+
+            <article class="tag-card tag-item">
+                <h3>&lt;tbody&gt;, &lt;thead&gt;, &lt;tfoot&gt;</h3>
+                <p>टेबल की मुख्य पंक्तियों, शीर्षक और अंतिम भाग को समूहित करते हैं।</p>
+                <pre><code>&lt;table&gt;
+&lt;thead&gt;&lt;tr&gt;&lt;th&gt;नाम&lt;/th&gt;&lt;/tr&gt;&lt;/thead&gt;
+&lt;tbody&gt;&lt;tr&gt;&lt;td&gt;राम&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;
 &lt;/table&gt;</code></pre>
+            </article>
 
-<h3>4. scope और headers</h3>
-<p><code>scope</code> बताता है कि हेडर किस पंक्ति या कॉलम से संबंधित है। <code>headers</code> डेटा सेल को एक या अधिक हेडर IDs से जोड़ सकता है।</p>
-<pre><code>&lt;table&gt;
-  &lt;tr&gt;
-    &lt;th id="name" scope="col"&gt;नाम&lt;/th&gt;
-    &lt;th id="marks" scope="col"&gt;अंक&lt;/th&gt;
-  &lt;/tr&gt;
-  &lt;tr&gt;
-    &lt;td headers="name"&gt;राम&lt;/td&gt;
-    &lt;td headers="marks"&gt;90&lt;/td&gt;
-  &lt;/tr&gt;
-&lt;/table&gt;</code></pre>
+            <article class="tag-card tag-item">
+                <h3>&lt;td&gt;, &lt;th&gt;, &lt;tr&gt;</h3>
+                <p>टेबल के सामान्य सेल, शीर्षक सेल और पंक्ति बनाते हैं।</p>
+                <pre><code>&lt;tr&gt;&lt;th&gt;नाम&lt;/th&gt;&lt;td&gt;राम&lt;/td&gt;&lt;/tr&gt;</code></pre>
+            </article>
 
-<h3>5. पूरा मार्कशीट उदाहरण</h3>
-<table>
-<caption>विद्यार्थियों के परीक्षा परिणाम</caption>
-<thead>
-<tr>
-<th scope="col">नाम</th>
-<th scope="col">हिंदी</th>
-<th scope="col">अंग्रेजी</th>
-<th scope="col">कुल अंक</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>राम</td><td>85</td><td>90</td><td>175</td></tr>
-<tr><td>सीता</td><td>95</td><td>92</td><td>187</td></tr>
-<tr><td>मोहन</td><td>75</td><td>80</td><td>155</td></tr>
-</tbody>
-<tfoot>
-<tr><th scope="row" colspan="3">कुल विद्यार्थियों की संख्या</th><td>3</td></tr>
-</tfoot>
-</table>
+            <article class="tag-card tag-item">
+                <h3>&lt;template&gt;</h3>
+                <p>ऐसी HTML सामग्री रखता है जो सामान्यतः तुरंत प्रदर्शित नहीं होती।</p>
+                <pre><code>&lt;template id="card"&gt;
+&lt;p&gt;नया कार्ड&lt;/p&gt;
+&lt;/template&gt;</code></pre>
+            </article>
 
-<div class="warning">पुराने उदाहरणों में <code>border="1"</code> दिखाई दे सकता है, लेकिन टेबल की सजावट के लिए CSS इस्तेमाल करना बेहतर है।</div>
-</section>
+            <article class="tag-card tag-item">
+                <h3>&lt;textarea&gt;</h3>
+                <p>कई लाइनों में टेक्स्ट लिखने की जगह देता है।</p>
+                <pre><code>&lt;textarea rows="4" cols="30"&gt;&lt;/textarea&gt;</code></pre>
+            </article>
 
-<!-- सर्च -->
-<section class="card" id="tagSearchSection">
-<h2>🔎 HTML टैग खोजें</h2>
-<p>टैग का नाम या उसका काम लिखकर नीचे के कार्ड खोजें।</p>
-<input type="search" id="tagSearch" placeholder="जैसे: h1, image, table, paragraph" aria-label="HTML टैग खोजें">
-<div class="tag-list" id="tagList">
-<div class="tag-item"><h3><code>&lt;div&gt;</code></h3><p>सामग्री को समूहित करने वाला सामान्य ब्लॉक तत्व।</p><pre><code>&lt;div&gt;सामग्री&lt;/div&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;span&gt;</code></h3><p>टेक्स्ट के छोटे हिस्से को समूहित करने वाला इनलाइन तत्व।</p><pre><code>&lt;span&gt;विशेष शब्द&lt;/span&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;header&gt;</code></h3><p>पेज या भाग का परिचयात्मक हिस्सा।</p><pre><code>&lt;header&gt;
-  &lt;h1&gt;वेबसाइट&lt;/h1&gt;
-&lt;/header&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;nav&gt;</code></h3><p>नेविगेशन लिंक का समूह।</p><pre><code>&lt;nav&gt;
-  &lt;a href="#home"&gt;होम&lt;/a&gt;
-&lt;/nav&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;main&gt;</code></h3><p>पेज की मुख्य सामग्री।</p><pre><code>&lt;main&gt;मुख्य सामग्री&lt;/main&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;section&gt;</code></h3><p>संबंधित सामग्री का अलग भाग।</p><pre><code>&lt;section&gt;
-  &lt;h2&gt;अध्याय&lt;/h2&gt;
-&lt;/section&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;article&gt;</code></h3><p>स्वतंत्र लेख या सामग्री।</p><pre><code>&lt;article&gt;लेख&lt;/article&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;aside&gt;</code></h3><p>मुख्य सामग्री से संबंधित अतिरिक्त जानकारी।</p><pre><code>&lt;aside&gt;सहायक जानकारी&lt;/aside&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;footer&gt;</code></h3><p>पेज या भाग का निचला हिस्सा।</p><pre><code>&lt;footer&gt;कॉपीराइट&lt;/footer&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;details&gt; और &lt;summary&gt;</code></h3><p>खुलने-बंद होने वाला विवरण।</p><pre><code>&lt;details&gt;
-  &lt;summary&gt;उत्तर देखें&lt;/summary&gt;
-  HTML एक Markup Language है।
-&lt;/details&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;form&gt;</code></h3><p>उपयोगकर्ता से जानकारी लेने का फॉर्म।</p><pre><code>&lt;form&gt;
-  &lt;input type="text"&gt;
-  &lt;button&gt;भेजें&lt;/button&gt;
-&lt;/form&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;label&gt;</code></h3><p>फॉर्म इनपुट का नाम या विवरण बताता है।</p><pre><code>&lt;label for="name"&gt;नाम&lt;/label&gt;
-&lt;input id="name"&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;input&gt;</code></h3><p>टेक्स्ट, ईमेल, पासवर्ड और अन्य प्रकार का इनपुट लेता है।</p><pre><code>&lt;input type="text"&gt;
-&lt;input type="email"&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;textarea&gt;</code></h3><p>कई लाइनों वाला टेक्स्ट इनपुट।</p><pre><code>&lt;textarea rows="3"&gt;&lt;/textarea&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;select&gt; और &lt;option&gt;</code></h3><p>विकल्पों की सूची से चयन करने के लिए।</p><pre><code>&lt;select&gt;
-  &lt;option&gt;हिंदी&lt;/option&gt;
-  &lt;option&gt;अंग्रेजी&lt;/option&gt;
-&lt;/select&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;button&gt;</code></h3><p>क्लिक करने योग्य बटन।</p><pre><code>&lt;button type="button"&gt;
-  क्लिक करें
-&lt;/button&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;audio&gt;</code></h3><p>ऑडियो चलाता है।</p><pre><code>&lt;audio controls&gt;
-  &lt;source src="audio.mp3"
-  type="audio/mpeg"&gt;
-&lt;/audio&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;video&gt;</code></h3><p>वीडियो चलाता है।</p><pre><code>&lt;video controls width="300"&gt;
-  &lt;source src="video.mp4"
-  type="video/mp4"&gt;
-&lt;/video&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;progress&gt;</code></h3><p>किसी काम की प्रगति दिखाता है।</p><pre><code>&lt;progress value="60"
-max="100"&gt;&lt;/progress&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;meter&gt;</code></h3><p>एक ज्ञात सीमा के भीतर माप दिखाता है।</p><pre><code>&lt;meter value="7"
-min="0" max="10"&gt;&lt;/meter&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;iframe&gt;</code></h3><p>दूसरे वेब पेज या संसाधन को एम्बेड करता है।</p><pre><code>&lt;iframe
-src="about.html"
-title="परिचय"&gt;&lt;/iframe&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;canvas&gt;</code></h3><p>JavaScript से ग्राफिक्स बनाने का क्षेत्र।</p><pre><code>&lt;canvas id="drawing"
-width="200" height="100"&gt;
-&lt;/canvas&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;script&gt;</code></h3><p>JavaScript जोड़ता है।</p><pre><code>&lt;script&gt;
-  console.log("नमस्ते");
-&lt;/script&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;style&gt;</code></h3><p>HTML पेज में CSS नियम लिखता है।</p><pre><code>&lt;style&gt;
-  p { color: blue; }
-&lt;/style&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;link&gt;</code></h3><p>बाहरी संसाधन, जैसे CSS फ़ाइल, जोड़ता है।</p><pre><code>&lt;link rel="stylesheet"
-href="style.css"&gt;</code></pre></div>
-<div class="tag-item"><h3><code>&lt;noscript&gt;</code></h3><p>JavaScript बंद होने या उपलब्ध न होने पर वैकल्पिक सामग्री दिखाता है।</p><pre><code>&lt;noscript&gt;
-JavaScript उपलब्ध नहीं है।
-&lt;/noscript&gt;</code></pre></div>
-</div>
-<p class="note">सर्च बॉक्स इस अतिरिक्त सूची के कार्ड खोजता है। पाँचों अध्यायों को ऊपर दिए गए भागों के लिंक से पढ़ें। यह सूची भी सभी HTML तत्वों की पूरी सूची नहीं है।</p>
-</section>
+            <article class="tag-card tag-item">
+                <h3>&lt;time&gt;</h3>
+                <p>तारीख या समय दर्शाता है।</p>
+                <pre><code>&lt;time datetime="2026-10-24"&gt;24 अक्टूबर 2026&lt;/time&gt;</code></pre>
+            </article>
 
-<!-- टेस्ट -->
-<section class="card" id="quiz">
-<h2>📝 HTML टेस्ट</h2>
-<p>हर प्रश्न का एक सही उत्तर चुनें। सभी प्रश्नों के उत्तर देने के बाद रिजल्ट देखें।</p>
+            <article class="tag-card tag-item">
+                <h3>&lt;title&gt;</h3>
+                <p>ब्राउज़र टैब में पेज का शीर्षक देता है।</p>
+                <pre><code>&lt;title&gt;मेरी वेबसाइट&lt;/title&gt;</code></pre>
+            </article>
 
-<form id="quizForm">
-<div class="question">
-<p><strong>1. HTML का पूरा नाम क्या है?</strong></p>
-<label><input type="radio" name="q1" value="a"> HyperText Markup Language</label>
-<label><input type="radio" name="q1" value="b"> HighText Machine Language</label>
-<label><input type="radio" name="q1" value="c"> Home Tool Markup Language</label>
-</div>
+            <article class="tag-card tag-item">
+                <h3>&lt;track&gt;</h3>
+                <p>वीडियो या ऑडियो के लिए subtitles और captions जोड़ता है।</p>
+                <pre><code>&lt;track src="subtitles.vtt" kind="subtitles" srclang="hi" label="हिंदी"&gt;</code></pre>
+            </article>
 
-<div class="question">
-<p><strong>2. पैराग्राफ के लिए कौन-सा टैग है?</strong></p>
-<label><input type="radio" name="q2" value="a"> &lt;h1&gt;</label>
-<label><input type="radio" name="q2" value="b"> &lt;p&gt;</label>
-<label><input type="radio" name="q2" value="c"> &lt;img&gt;</label>
-</div>
+            <article class="tag-card tag-item">
+                <h3>&lt;u&gt;</h3>
+                <p>ऐसे टेक्स्ट को रेखांकित करता है जिसे अलग तरह से चिह्नित करना हो।</p>
+                <pre><code>&lt;u&gt;विशेष शब्द&lt;/u&gt;</code></pre>
+            </article>
 
-<div class="question">
-<p><strong>3. चित्र दिखाने के लिए कौन-सा टैग है?</strong></p>
-<label><input type="radio" name="q3" value="a"> &lt;image&gt;</label>
-<label><input type="radio" name="q3" value="b"> &lt;picturetext&gt;</label>
-<label><input type="radio" name="q3" value="c"> &lt;img&gt;</label>
-</div>
+            <article class="tag-card tag-item">
+                <h3>&lt;ul&gt;</h3>
+                <p>बिना क्रम वाली सूची बनाता है।</p>
+                <pre><code>&lt;ul&gt;&lt;li&gt;सेब&lt;/li&gt;&lt;/ul&gt;</code></pre>
+            </article>
 
-<div class="question">
-<p><strong>4. लिंक बनाने के लिए कौन-सा टैग है?</strong></p>
-<label><input type="radio" name="q4" value="a"> &lt;a&gt;</label>
-<label><input type="radio" name="q4" value="b"> &lt;href&gt;</label>
-<label><input type="radio" name="q4" value="c"> &lt;linktext&gt;</label>
-</div>
+            <article class="tag-card tag-item">
+                <h3>&lt;var&gt;</h3>
+                <p>गणित या प्रोग्रामिंग में किसी चर को दर्शाता है।</p>
+                <pre><code>&lt;var&gt;x&lt;/var&gt; + 2</code></pre>
+            </article>
 
-<div class="question">
-<p><strong>5. टेबल की पंक्ति के लिए कौन-सा टैग है?</strong></p>
-<label><input type="radio" name="q5" value="a"> &lt;td&gt;</label>
-<label><input type="radio" name="q5" value="b"> &lt;tr&gt;</label>
-<label><input type="radio" name="q5" value="c"> &lt;th&gt;</label>
-</div>
+            <article class="tag-card tag-item">
+                <h3>&lt;video&gt;</h3>
+                <p>वेब पेज पर वीडियो चलाता है।</p>
+                <pre><code>&lt;video controls width="320"&gt;
+&lt;source src="video.mp4" type="video/mp4"&gt;
+&lt;/video&gt;</code></pre>
+            </article>
 
-<div class="question">
-<p><strong>6. बिना क्रम वाली सूची के लिए कौन-सा टैग है?</strong></p>
-<label><input type="radio" name="q6" value="a"> &lt;ol&gt;</label>
-<label><input type="radio" name="q6" value="b"> &lt;dl&gt;</label>
-<label><input type="radio" name="q6" value="c"> &lt;ul&gt;</label>
-</div>
+            <article class="tag-card tag-item">
+                <h3>&lt;wbr&gt;</h3>
+                <p>लंबे शब्द में लाइन टूटने की संभावित जगह बताता है।</p>
+                <pre><code>बहुतलंबाशब्द&lt;wbr&gt;काअगला भाग</code></pre>
+            </article>
 
-<div class="question">
-<p><strong>7. चित्र का वैकल्पिक विवरण किस Attribute में दिया जाता है?</strong></p>
-<label><input type="radio" name="q7" value="a"> href</label>
-<label><input type="radio" name="q7" value="b"> alt</label>
-<label><input type="radio" name="q7" value="c"> target</label>
-</div>
+        </div>
 
-<div class="question">
-<p><strong>8. कई कॉलम में फैलने के लिए कौन-सा Attribute है?</strong></p>
-<label><input type="radio" name="q8" value="a"> rowspan</label>
-<label><input type="radio" name="q8" value="b"> colspan</label>
-<label><input type="radio" name="q8" value="c"> scope</label>
-</div>
+        <p id="noResults" class="highlight" hidden>
+            इस नाम का टैग सूची में नहीं मिला। नाम की स्पेलिंग जाँचें।
+        </p>
 
-<button type="submit">मेरा रिजल्ट देखें</button>
-<button type="reset">दोबारा टेस्ट दें</button>
-</form>
+        <p class="small" style="margin-top:15px;">
+            नोट: HTML में कुछ पुराने tags अब obsolete हैं और कुछ tags
+            केवल विशेष परिस्थितियों में उपयोग होते हैं। आधुनिक HTML
+            लिखते समय सही और अर्थपूर्ण tags का उपयोग करें।
+        </p>
+    </section>
 
-<div id="quizResult" class="result" aria-live="polite"></div>
-</section>
+    <section id="quiz" class="quiz">
+        <h2>HTML का छोटा टेस्ट</h2>
+        <p>सभी प्रश्नों के सही उत्तर चुनकर अपना स्कोर देखो।</p>
 
-<section class="card">
-<h2>🎯 अभ्यास के लिए काम</h2>
-<ol>
-<li>अपने नाम का एक HTML पेज बनाइए।</li>
-<li>उसमें कम-से-कम तीन Headings और दो Paragraph जोड़िए।</li>
-<li>एक चित्र और एक वेबसाइट का लिंक जोड़िए।</li>
-<li>अपनी पसंद की पाँच वस्तुओं की सूची बनाइए।</li>
-<li>तीन विद्यार्थियों के अंकों की टेबल बनाइए।</li>
-<li>हर टैग का नाम और उसका काम अपनी कॉपी में लिखिए।</li>
-</ol>
-<div class="success"><strong>सफलता का तरीका:</strong> कोड को केवल पढ़ें नहीं—खुद लिखें, ब्राउज़र में चलाएँ और परिणाम देखें।</div>
-</section>
+        <form id="quizForm">
 
-<p>
-<a class="btn" href="corse.html">← सभी कोर्स</a>
-<a class="btn" href="#home">ऊपर जाएँ ↑</a>
-</p>
+            <div class="question">
+                <p><strong>1. HTML का पूरा नाम क्या है?</strong></p>
+                <label><input type="radio" name="q1" value="a"> HyperText Markup Language</label>
+                <label><input type="radio" name="q1" value="b"> HighText Machine Language</label>
+                <label><input type="radio" name="q1" value="c"> Hyper Transfer Main Language</label>
+            </div>
+
+            <div class="question">
+                <p><strong>2. सबसे मुख्य सामान्य heading कौन-सी है?</strong></p>
+                <label><input type="radio" name="q2" value="a"> &lt;h6&gt;</label>
+                <label><input type="radio" name="q2" value="b"> &lt;h1&gt;</label>
+                <label><input type="radio" name="q2" value="c"> &lt;head&gt;</label>
+            </div>
+
+            <div class="question">
+                <p><strong>3. लिंक बनाने के लिए कौन-सा टैग उपयोग होता है?</strong></p>
+                <label><input type="radio" name="q3" value="a"> &lt;img&gt;</label>
+                <label><input type="radio" name="q3" value="b"> &lt;p&gt;</label>
+                <label><input type="radio" name="q3" value="c"> &lt;a&gt;</label>
+            </div>
+
+            <div class="question">
+                <p><strong>4. तस्वीर दिखाने के लिए कौन-सा टैग है?</strong></p>
+                <label><input type="radio" name="q4" value="a"> &lt;image&gt;</label>
+                <label><input type="radio" name="q4" value="b"> &lt;img&gt;</label>
+                <label><input type="radio" name="q4" value="c"> &lt;picture-file&gt;</label>
+            </div>
+
+            <div class="question">
+                <p><strong>5. CSS फ़ाइल जोड़ने के लिए कौन-सा टैग है?</strong></p>
+                <label><input type="radio" name="q5" value="a"> &lt;link&gt;</label>
+                <label><input type="radio" name="q5" value="b"> &lt;stylefile&gt;</label>
+                <label><input type="radio" name="q5" value="c"> &lt;css&gt;</label>
+            </div>
+
+            <div class="question">
+                <p><strong>6. बिना क्रम वाली सूची का टैग कौन-सा है?</strong></p>
+                <label><input type="radio" name="q6" value="a"> &lt;ol&gt;</label>
+                <label><input type="radio" name="q6" value="b"> &lt;ul&gt;</label>
+                <label><input type="radio" name="q6" value="c"> &lt;li&gt;</label>
+            </div>
+
+            <div class="question">
+                <p><strong>7. फॉर्म में टेक्स्ट इनपुट के लिए कौन-सा टैग उपयोग होता है?</strong></p>
+                <label><input type="radio" name="q7" value="a"> &lt;input&gt;</label>
+                <label><input type="radio" name="q7" value="b"> &lt;enter&gt;</label>
+                <label><input type="radio" name="q7" value="c"> &lt;write&gt;</label>
+            </div>
+
+            <div class="question">
+                <p><strong>8. वेब पेज की दिखाई देने वाली मुख्य सामग्री कहाँ लिखते हैं?</strong></p>
+                <label><input type="radio" name="q8" value="a"> &lt;title&gt;</label>
+                <label><input type="radio" name="q8" value="b"> &lt;head&gt;</label>
+                <label><input type="radio" name="q8" value="c"> &lt;body&gt;</label>
+            </div>
+
+            <button type="submit">मेरा रिजल्ट देखें</button>
+            <button type="reset">दोबारा टेस्ट दें</button>
+
+            <p id="quizResult" aria-live="polite"></p>
+        </form>
+    </section>
+
+    <section id="practice" class="practice">
+        <h2>HTML Practice</h2>
+
+        <p>
+            नीचे दिए गए बॉक्स में अपना HTML कोड लिखो।
+            फिर <strong>Preview देखें</strong> बटन दबाओ।
+        </p>
+
+        <textarea id="codeEditor" spellcheck="false"><h1>नमस्ते!</h1>
+<p>मैं HTML सीख रहा हूँ।</p>
+<button>क्लिक करें</button></textarea>
+
+        <br>
+
+        <button type="button" id="previewButton">Preview देखें</button>
+
+        <h3>तुम्हारे कोड का Preview</h3>
+
+        <iframe
+            id="previewFrame"
+            title="HTML कोड का Preview"
+            sandbox
+            style="width:100%;height:250px;background:white;border:2px solid #c8d5e5;border-radius:8px;">
+        </iframe>
+
+        <p class="small">
+            सुरक्षा के लिए Preview अलग sandbox में चलता है।
+            यहाँ JavaScript चलाने की अनुमति नहीं दी गई है।
+        </p>
+    </section>
 
 </main>
 
 <footer>
-<p>© 2026 My Skill | HTML सीखें हिंदी में</p>
-<p>सीखते रहें, अभ्यास करते रहें! 🚀</p>
+    <p>© 2026 My Skill | HTML सीखो, अभ्यास करो और आगे बढ़ो।</p>
+    <p>बनाया गया सीखने और अभ्यास करने के लिए।</p>
 </footer>
 
 <script>
-// अतिरिक्त टैग कार्ड खोजने की सुविधा
-const tagSearch = document.getElementById("tagSearch");
-const tagItems = document.querySelectorAll("#tagList .tag-item");
+    // HTML Tags Search
+    const tagSearch = document.getElementById("tagSearch");
+    const tagItems = document.querySelectorAll(".tag-item");
+    const noResults = document.getElementById("noResults");
 
-tagSearch.addEventListener("input", function () {
-    const query = this.value.toLowerCase().trim();
+    tagSearch.addEventListener("input", function () {
+        const searchText = this.value.trim().toLowerCase();
+        let visibleCount = 0;
 
-    tagItems.forEach(function (item) {
-        const text = item.textContent.toLowerCase();
-        item.style.display = text.includes(query) ? "" : "none";
+        tagItems.forEach(function (item) {
+            const text = item.textContent.toLowerCase();
+            const matches = text.includes(searchText);
+
+            item.hidden = !matches;
+
+            if (matches) {
+                visibleCount++;
+            }
+        });
+
+        noResults.hidden = visibleCount !== 0;
     });
-});
 
-// टेस्ट के उत्तर जाँचें
-const quizForm = document.getElementById("quizForm");
-const quizResult = document.getElementById("quizResult");
-
-quizForm.addEventListener("submit", function (event) {
-    event.preventDefault();
+    // Quiz Result
+    const quizForm = document.getElementById("quizForm");
+    const quizResult = document.getElementById("quizResult");
 
     const answers = {
         q1: "a",
         q2: "b",
         q3: "c",
-        q4: "a",
-        q5: "b",
-        q6: "c",
-        q7: "b",
-        q8: "b"
+        q4: "b",
+        q5: "a",
+        q6: "b",
+        q7: "a",
+        q8: "c"
     };
 
-    let score = 0;
-    let unanswered = 0;
+    quizForm.addEventListener("submit", function (event) {
+        event.preventDefault();
 
-    for (const question in answers) {
-        const selected = quizForm.querySelector(
-            'input[name="' + question + '"]:checked'
-        );
+        let score = 0;
+        let unanswered = 0;
+        const total = Object.keys(answers).length;
 
-        if (!selected) {
-            unanswered++;
-        } else if (selected.value === answers[question]) {
-            score++;
+        for (const question in answers) {
+            const selected = quizForm.querySelector(
+                'input[name="' + question + '"]:checked'
+            );
+
+            if (!selected) {
+                unanswered++;
+            } else if (selected.value === answers[question]) {
+                score++;
+            }
         }
-    }
 
-    if (unanswered > 0) {
         quizResult.textContent =
-            "पहले सभी प्रश्नों के उत्तर चुनें। अभी " +
-            unanswered + " प्रश्न बाकी हैं।";
-        return;
+            "तुम्हारा स्कोर: " + score + " / " + total +
+            (unanswered ? " | बिना उत्तर वाले प्रश्न: " + unanswered : "") +
+            (score === total
+                ? " — शानदार! सभी उत्तर सही हैं।"
+                : " — नोट्स पढ़कर फिर से अभ्यास करो।");
+    });
+
+    quizForm.addEventListener("reset", function () {
+        quizResult.textContent = "";
+    });
+
+    // HTML Preview
+    const codeEditor = document.getElementById("codeEditor");
+    const previewFrame = document.getElementById("previewFrame");
+    const previewButton = document.getElementById("previewButton");
+
+    function updatePreview() {
+        const previewDocument = previewFrame.contentDocument;
+
+        previewDocument.open();
+        previewDocument.write(
+            "<!DOCTYPE html><html lang='hi'><head>" +
+            "<meta charset='UTF-8'>" +
+            "<meta name='viewport' content='width=device-width, initial-scale=1.0'>" +
+            "<style>body{font-family:Arial,sans-serif;padding:12px;line-height:1.6}" +
+            "img,video{max-width:100%;height:auto}</style>" +
+            "</head><body>" +
+            codeEditor.value +
+            "</body></html>"
+        );
+        previewDocument.close();
     }
 
-    quizResult.textContent =
-        "आपका स्कोर: " + score + "/8। " +
-        (score === 8
-            ? "बहुत बढ़िया! सभी उत्तर सही हैं! 🎉"
-            : "अच्छा प्रयास! नोट्स दोबारा पढ़ें और फिर कोशिश करें।");
-});
+    previewButton.addEventListener("click", updatePreview);
 
-quizForm.addEventListener("reset", function () {
-    quizResult.textContent = "";
-});
+    // Show the initial example
+    updatePreview();
 </script>
-<!-- अतिरिक्त HTML टैग -->
-<section id="extra-html-tags" style="padding:20px; margin:20px auto; max-width:1000px; background:#f0f9ff; border-radius:12px; font-family:Arial,sans-serif;">
 
-  <h2 style="color:#075985;">📚 HTML के 12 अतिरिक्त महत्वपूर्ण टैग</h2>
-
-  <p>इन टैगों का उपयोग फ़ॉर्म, वेबसाइट की संरचना, मीडिया और अन्य कामों के लिए किया जाता है।</p>
-
-  <!-- 1. FIELDSET और LEGEND -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>1. &lt;fieldset&gt; और &lt;legend&gt;</h3>
-    <p><b>काम:</b> फ़ॉर्म के संबंधित इनपुट को एक समूह में रखना और उस समूह को शीर्षक देना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;fieldset&gt;
-  &lt;legend&gt;व्यक्तिगत जानकारी&lt;/legend&gt;
-  &lt;label&gt;नाम:
-    &lt;input type="text"&gt;
-  &lt;/label&gt;
-&lt;/fieldset&gt;</code></pre>
-  </div>
-
-  <!-- 2. DATALIST -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>2. &lt;datalist&gt;</h3>
-    <p><b>काम:</b> इनपुट बॉक्स में उपयोगकर्ता को विकल्पों के सुझाव देना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;label for="city"&gt;शहर चुनें:&lt;/label&gt;
-
-&lt;input id="city" list="cities"&gt;
-
-&lt;datalist id="cities"&gt;
-  &lt;option value="Agra"&gt;
-  &lt;option value="Delhi"&gt;
-  &lt;option value="Lucknow"&gt;
-&lt;/datalist&gt;</code></pre>
-  </div>
-
-  <!-- 3. OPTGROUP -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>3. &lt;optgroup&gt;</h3>
-    <p><b>काम:</b> &lt;select&gt; के विकल्पों को अलग-अलग समूहों में बाँटना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;select&gt;
-  &lt;optgroup label="फल"&gt;
-    &lt;option&gt;सेब&lt;/option&gt;
-    &lt;option&gt;आम&lt;/option&gt;
-  &lt;/optgroup&gt;
-
-  &lt;optgroup label="सब्जियाँ"&gt;
-    &lt;option&gt;आलू&lt;/option&gt;
-  &lt;/optgroup&gt;
-&lt;/select&gt;</code></pre>
-  </div>
-
-  <!-- 4. OUTPUT -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>4. &lt;output&gt;</h3>
-    <p><b>काम:</b> किसी गणना या क्रिया का परिणाम दिखाना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;form oninput="result.value=Number(a.value)+Number(b.value)"&gt;
-  &lt;input id="a" type="number" value="2"&gt; +
-
-  &lt;input id="b" type="number" value="3"&gt; =
-
-  &lt;output name="result"&gt;5&lt;/output&gt;
-&lt;/form&gt;</code></pre>
-  </div>
-
-  <!-- 5. PROGRESS -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>5. &lt;progress&gt;</h3>
-    <p><b>काम:</b> किसी काम की प्रगति दिखाना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;label for="download"&gt;डाउनलोड:&lt;/label&gt;
-
-&lt;progress id="download" value="60" max="100"&gt;
-  60%
-&lt;/progress&gt;</code></pre>
-
-    <p><b>परिणाम:</b> 100 में से 60 की प्रगति दिखाई जाएगी।</p>
-  </div>
-
-  <!-- 6. METER -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>6. &lt;meter&gt;</h3>
-    <p><b>काम:</b> किसी निश्चित सीमा में माप दिखाना, जैसे अंक या स्तर।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;label for="marks"&gt;अंक:&lt;/label&gt;
-
-&lt;meter id="marks" min="0" max="100" value="75"&gt;
-  75/100
-&lt;/meter&gt;</code></pre>
-  </div>
-
-  <!-- 7. DIALOG -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>7. &lt;dialog&gt;</h3>
-    <p><b>काम:</b> डायलॉग बॉक्स या संवाद विंडो बनाना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;dialog id="message"&gt;
-  यह एक संवाद बॉक्स है।
-
-  &lt;button onclick="this.closest('dialog').close()"&gt;
-    बंद करें
-  &lt;/button&gt;
-&lt;/dialog&gt;
-
-&lt;button onclick="document.getElementById('message').showModal()"&gt;
-  संवाद बॉक्स खोलें
-&lt;/button&gt;</code></pre>
-  </div>
-
-  <!-- 8. TEMPLATE -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>8. &lt;template&gt;</h3>
-    <p><b>काम:</b> HTML सामग्री को सुरक्षित रखना, जिसे JavaScript से बाद में पेज पर जोड़ा जा सकता है।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;template id="card"&gt;
-  &lt;p&gt;यह बाद में जोड़ा जाएगा।&lt;/p&gt;
-&lt;/template&gt;</code></pre>
-  </div>
-
-  <!-- 9. NOSCRIPT -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>9. &lt;noscript&gt;</h3>
-    <p><b>काम:</b> जब JavaScript उपलब्ध या चालू न हो, तब वैकल्पिक संदेश दिखाना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;noscript&gt;
-  इस वेबसाइट के कुछ फ़ीचर के लिए JavaScript आवश्यक है।
-&lt;/noscript&gt;</code></pre>
-  </div>
-
-  <!-- 10. ADDRESS -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>10. &lt;address&gt;</h3>
-    <p><b>काम:</b> पेज या लेख के लेखक अथवा संबंधित व्यक्ति या संस्था की संपर्क जानकारी देना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;address&gt;
-  संपर्क: example@example.com
-&lt;/address&gt;</code></pre>
-  </div>
-
-  <!-- 11. SEARCH -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>11. &lt;search&gt;</h3>
-    <p><b>काम:</b> खोज से संबंधित फ़ॉर्म या सामग्री को दर्शाना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;search&gt;
-  &lt;form action="/search"&gt;
-    &lt;label for="q"&gt;खोजें:&lt;/label&gt;
-    &lt;input id="q" name="q" type="search"&gt;
-    &lt;button type="submit"&gt;खोजें&lt;/button&gt;
-  &lt;/form&gt;
-&lt;/search&gt;</code></pre>
-  </div>
-
-  <!-- 12. DETAILS और SUMMARY --><div style="background:white; padding:15px; margin:12px 0; border-radius:8px;"><h3>12. &lt;details&gt; और &lt;summary&gt;</h3> <p><b>काम:</b> क्लिक करने पर अतिरिक्त जानकारी खोलना या बंद करना।</p> <h4>उदाहरण:</h4> <pre><code>&lt;details&gt;
-  &lt;summary&gt;HTML क्या है?&lt;/summary&gt;
-  HTML वेब पेज की संरचना बनाने की भाषा है।
-&lt;/details&gt;</code></pre><h4>चलाकर देखें:</h4><details>
-    <summary>HTML क्या है?</summary>
-    <p>HTML वेब पेज की संरचना बनाने की भाषा है।</p>
-</details></div><!-- जरूरी सूचना --><div style="background:#dbeafe; padding:12px; border-radius:8px;">
-  <b>ध्यान दें:</b>
-  यह HTML के 12 अतिरिक्त टैगों का चयन है, सभी HTML टैगों की पूरी सूची नहीं।
-  कुछ टैगों के लिए CSS या JavaScript की भी आवश्यकता हो सकती है।
-</div></section>
-</body>
-</html> <!-- 12. DETAILS और SUMMARY -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>12. &lt;details&gt; और &lt;summary&gt;</h3>
-    <p><b>काम:</b> क्लिक करने पर अतिरिक्त जानकारी खोलना या बंद करना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;details&gt;
-  &lt;summary&gt;HTML क्या है?&lt;/summary&gt;
-  HTML वेब पेज की संरचना बनाने की भाषा है।
-&lt;/details&gt;</code></pre>
-  </div>
-
-  <!-- जरूरी सूचना -->
-  <div style="background:#dbeafe; padding:12px; border-radius:8px;">
-    <b>ध्यान दें:</b>
-    यह HTML के 12 अतिरिक्त टैगों का चयन है, सभी HTML टैगों की पूरी सूची नहीं।
-    कुछ टैगों के लिए CSS या JavaScript की भी आवश्यकता हो सकती है।
-  </div>
-
-    </section>
-</body>
-</html><!-- 12. DETAILS और SUMMARY -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>12. &lt;details&gt; और &lt;summary&gt;</h3>
-    <p><b>काम:</b> क्लिक करने पर अतिरिक्त जानकारी खोलना या बंद करना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;details&gt;
-  &lt;summary&gt;HTML क्या है?&lt;/summary&gt;
-  HTML वेब पेज की संरचना बनाने की भाषा है।
-&lt;/details&gt;</code></pre>
-  </div>
-
-  <!-- जरूरी सूचना -->
-  <div style="background:#dbeafe; padding:12px; border-radius:8px;">
-    <b>ध्यान दें:</b>
-    यह HTML के 12 अतिरिक्त टैगों का चयन है, सभी HTML टैगों की पूरी सूची नहीं।
-    कुछ टैगों के लिए CSS या JavaScript की भी आवश्यकता हो सकती है।
-  </div>
-
-    </section>
-</body>
-</html><!-- 12. DETAILS और SUMMARY -->
-  <div style="background:white; padding:15px; margin:12px 0; border-radius:8px;">
-    <h3>12. &lt;details&gt; और &lt;summary&gt;</h3>
-    <p><b>काम:</b> क्लिक करने पर अतिरिक्त जानकारी खोलना या बंद करना।</p>
-
-    <h4>उदाहरण:</h4>
-    <pre><code>&lt;details&gt;
-  &lt;summary&gt;HTML क्या है?&lt;/summary&gt;
-  HTML वेब पेज की संरचना बनाने की भाषा है।
-&lt;/details&gt;</code></pre>
-      <h4>चलाकर देखें:</h4>
-<details>
-  <summary>HTML क्या है?</summary>
-  <p>HTML वेब पेज की संरचना बनाने की भाषा है।</p>
-</details>
-  </div>
-
-  <!-- जरूरी सूचना -->
-  <div style="background:#dbeafe; padding:12px; border-radius:8px;">
-    <b>ध्यान दें:</b>
-    यह HTML के 12 अतिरिक्त टैगों का चयन है, सभी HTML टैगों की पूरी सूची नहीं।
-    कुछ टैगों के लिए CSS या JavaScript की भी आवश्यकता हो सकती है।
-  </div>
-
-    </section>
 </body>
     </html>
