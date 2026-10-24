@@ -228,6 +228,374 @@ footer {
 <p>वेब पेज बनाने के लिए<a href="html.html" style="display:inline-block; background:#1769c2; color:white; text-decoration:none; padding:11px 15px; border-radius:7px;">
 HTML की पढ़ाई शुरू करें
 </a></article>
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>My Skill - सभी कोर्स</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body 
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #172033;
+}
+
+header {
+    background: #123c80;
+    color: white;
+    text-align: center;
+    padding: 25px 15px;
+}
+
+header h1 { margin: 0; }
+
+nav {
+    background: #082b61;
+    padding: 12px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 8px;
+    display: inline-block;
+}
+
+.container {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.intro, .course {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    margin-bottom: 16px;
+}
+
+.search-box {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+h2 { color: #123c80; }
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 16px;
+}
+
+.course {
+    border-top: 4px solid #2878d0;
+}
+
+.course h3 { color: #123c80; }
+
+.course p { line-height: 1.6; }
+
+button {
+    background: #1769c2;
+    color: white;
+    border: none;
+    padding: 11px 15px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.details {
+    display: none;
+    background: #f0f7ff;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 8px;
+    line-height: 1.7;
+}
+
+.details a { color: #064eaa; }
+
+footer {
+    text-align: center;
+    background: #082b61;
+    color: white;
+    padding: 20px;
+}
+
+.empty {
+    display: none;
+    text-align: center;
+}
+</style>
+</head>
+
+<body>
+    <nav style="padding:15px; background:#e0f2fe; text-align:center;">
+  <a href="index.html">🏠 होम पेज</a> |
+  <a href="corse.html">📚 सभी कोर्स</a> |
+  <a href="html.html">📘 HTML नोट्स</a>
+    </nav>
+
+<header>
+    <h1>🎓 My Skill</h1>
+    <p>सीखो, अभ्यास करो और अपना कौशल बढ़ाओ!</p>
+</header>
+
+<nav>
+    <a href="index.html">🏠 होम</a>
+    <a href="#nielit">NIELIT</a>
+    <a href="#programming">प्रोग्रामिंग</a>
+    <a href="#web">वेब डेवलपमेंट</a>
+    <a href="#other">अन्य कोर्स</a>
+</nav>
+
+<div class="container">
+
+<section class="intro">
+    <h2>अपनी पढ़ाई यहाँ से शुरू करें</h2>
+    <p>अपनी पसंद का कोर्स खोजें और उसकी जानकारी देखें।</p>
+    <input id="search" class="search-box" type="search"
+           placeholder="कोर्स का नाम लिखकर खोजें..."
+           oninput="searchCourses()">
+</section>
+
+<h2 id="nielit">🎓 NIELIT कोर्स</h2>
+<div class="course-grid">
+
+<article class="course">
+<h3>O Level</h3>
+<p>कंप्यूटर, वेब डिजाइनिंग और प्रोग्रामिंग की पढ़ाई।</p>
+<button onclick="toggleDetails(this)">कोर्स देखें</button>
+<div class="details">
+<ul>
+<li>IT Tools और Network Basics</li>
+<li>Web Designing</li>
+<li>Python Programming</li>
+<li>प्रैक्टिकल और प्रोजेक्ट</li>
+</ul>
+<a href="https://www.nielit.gov.in/" target="_blank" rel="noopener">NIELIT की आधिकारिक वेबसाइट</a>
+<p>आधिकारिक पाठ्यक्रम से विषयों की पुष्टि करें।</p>
+</div>
+</article>
+
+<article class="course">
+<h3>A Level</h3>
+<p>एडवांस कंप्यूटर अध्ययन की तैयारी।</p>
+<button onclick="toggleDetails(this)">कोर्स देखें</button>
+<div class="details">विषयवार नोट्स और अभ्यास सामग्री आगे जोड़ी जाएगी।</div>
+</article>
+
+<article class="course">
+<h3>B Level</h3>
+<p>उच्च स्तर के कंप्यूटर अध्ययन की तैयारी।</p>
+<button onclick="toggleDetails(this)">कोर्स देखें</button>
+<div class="details">आधिकारिक पाठ्यक्रम के अनुसार सामग्री जोड़ी जाएगी।</div>
+</article>
+
+<article class="course">
+<h3>C Level</h3>
+<p>उच्च कंप्यूटर शिक्षा के लिए अध्ययन सामग्री।</p>
+<button onclick="toggleDetails(this)">कोर्स देखें</button>
+<div class="details">विषयवार नोट्स और अभ्यास आगे जोड़े जाएँगे।</div>
+</article>
+
+</div>
+
+<h2 id="programming">💻 प्रोग्रामिंग</h2>
+<div class="course-grid">
+
+<article class="course">
+<h3>Python</h3>
+<p>शुरुआत से Python सीखें।</p>
+<button onclick="toggleDetails(this)">पढ़ाई देखें</button>
+<div class="details">
+<ul>
+<li>Variables और Data Types</li>
+<li>If-Else और Loops</li>
+<li>Functions और Lists</li>
+<li>प्रैक्टिकल प्रोग्राम</li>
+</ul>
+</div>
+</article>
+
+<article class="course">
+<h3>C++</h3>
+<p>प्रोग्रामिंग की बुनियाद से OOP तक।</p>
+<button onclick="toggleDetails(this)">पढ़ाई देखें</button>
+<div class="details">Variables, Operators, Conditions, Loops, Functions, Classes और Objects।</div>
+</article>
+
+<article class="course">
+<h3>JavaScript</h3>
+<p>वेबसाइट में इंटरैक्टिव फीचर बनाना सीखें।</p>
+<button onclick="toggleDetails(this)">पढ़ाई देखें</button>
+<div class="details">Variables, Functions, Events और DOM का अभ्यास।</div>
+</article>
+
+<article class="course">
+<h3>Computer Basics</h3>
+<p>कंप्यूटर की शुरुआती जानकारी।</p>
+<button onclick="toggleDetails(this)">पढ़ाई देखें</button>
+<div class="details">हार्डवेयर, सॉफ्टवेयर, ऑपरेटिंग सिस्टम और इंटरनेट।</div>
+</article>
+
+</div>
+
+<h2 id="web">🌐 वेब डेवलपमेंट</h2>
+<div class="course-grid">
+
+<article class="course">
+<h3>HTML</h3>
+<p>वेब पेज बनाने के लिए<a href="html.html" style="display:inline-block; background:#1769c2; color:white; text-decoration:none; padding:11px 15px; border-radius:7px;">
+HTML की पढ़ाई शुरू करें
+</a></article>
+
+<article class="course">
+<h3>CSS</h3>
+<p>वेबसाइट को सुंदर बनाना सीखें।</p>
+<button onclick="toggleDetails(this)">पढ़ाई देखें</button>
+<div class="details">Colors, Fonts, Box Model, Flexbox, Grid और Responsive Design।</div>
+</article>
+
+<article class="course">
+<h3>React.js</h3>
+<p>आधुनिक वेब इंटरफेस बनाना सीखें।</p>
+<button onclick="toggleDetails(this)">पढ़ाई देखें</button>
+<div class="details">Components, Props, State और Hooks का परिचय।</div>
+</article>
+
+<article class="course">
+<h3>Next.js</h3>
+<p>React से वेब एप्लिकेशन बनाना सीखें।</p>
+<button onclick="toggleDetails(this)">पढ़ाई देखें</button>
+<div class="details">Routing, Layouts और Data Fetching का परिचय।</div>
+</article>
+
+<article class="course">
+<h3>Tailwind CSS</h3>
+<p>Utility classes से वेबसाइट डिजाइन करें।</p>
+<button onclick="toggleDetails(this)">पढ़ाई देखें</button>
+<div class="details">Layout, Spacing, Colors और Responsive Classes।</div>
+</article>
+
+</div>
+
+<h2 id="other">🚀 अन्य कोर्स</h2>
+<div class="course-grid">
+
+<article class="course">
+<h3>हिंदी और अंग्रेज़ी टाइपिंग</h3>
+<p>कीबोर्ड अभ्यास और टाइपिंग टेस्ट।</p>
+<button onclick="toggleDetails(this)">जानकारी देखें</button>
+<div class="details">कीबोर्ड की पहचान, सही उँगलियों का अभ्यास और टाइपिंग गति।</div>
+</article>
+
+<article class="course">
+<h3>English Learning</h3>
+<p>अंग्रेज़ी ग्रामर और वाक्य बनाना सीखें।</p>
+<button onclick="toggleDetails(this)">जानकारी देखें</button>
+<div class="details">Tenses, Vocabulary, Reading और रोजमर्रा के वाक्य।</div>
+</article>
+
+<article class="course">
+<h3>Node.js और Django</h3>
+<p>बैकएंड डेवलपमेंट का परिचय।</p>
+<button onclick="toggleDetails(this)">जानकारी देखें</button>
+<div class="details">Servers, APIs, Routing और Database Connection।</div>
+</article>
+
+<article class="course">
+<h3>PostgreSQL और MongoDB</h3>
+<p>डेटाबेस बनाना और डेटा सेव करना सीखें।</p>
+<button onclick="toggleDetails(this)">जानकारी देखें</button>
+<div class="details">Tables, Collections, Queries और Data Management।</div>
+</article>
+
+<article class="course">
+<h3>Cloud और DevOps</h3>
+<p>Linux, Docker, AWS और CI/CD का परिचय।</p>
+<button onclick="toggleDetails(this)">जानकारी देखें</button>
+<div class="details">Containers, Deployment, Monitoring और Cloud Computing।</div>
+</article>
+
+<article class="course">
+<h3>System Design</h3>
+<p>सॉफ्टवेयर सिस्टम की संरचना समझें।</p>
+<button onclick="toggleDetails(this)">जानकारी देखें</button>
+<div class="details">Load Balancing, Caching, Scaling और HLD/LLD।</div>
+</article>
+
+<article class="course">
+<h3>Practical Projects</h3>
+<p>सीखी हुई चीजों से प्रोजेक्ट बनाएँ।</p>
+<button onclick="toggleDetails(this)">प्रोजेक्ट देखें</button>
+<div class="details">
+<ul>
+<li>Portfolio Website</li>
+<li>URL Shortener</li>
+<li>Chat App</li>
+<li>Media Sharing Website</li>
+</ul>
+</div>
+</article>
+
+</div>
+
+<p id="empty" class="empty">यह कोर्स नहीं मिला। दूसरा नाम खोजें।</p>
+
+</div>
+
+<footer>
+<p>© My Skill | सीखना जारी रखें 🚀</p>
+<p>यह स्वतंत्र अध्ययन वेबसाइट है, आधिकारिक प्रमाणपत्र जारी करने वाली संस्था नहीं।</p>
+</footer>
+
+<script>
+function toggleDetails(button) {
+    const details = button.nextElementSibling;
+
+    if (details.style.display === "block") {
+        details.style.display = "none";
+        button.textContent = "कोर्स देखें";
+    } else {
+        details.style.display = "block";
+        button.textContent = "बंद करें";
+    }
+}
+
+function searchCourses() {
+    const query = document.getElementById("search").value.toLowerCase().trim();
+    const courses = document.querySelectorAll(".course");
+    let count = 0;
+
+    courses.forEach(course => {
+        const match = course.textContent.toLowerCase().includes(query);
+        course.style.display = match ? "" : "none";
+        if (match) count++;
+    });
+
+    document.getElementById("empty").style.display =
+        count === 0 ? "block" : "none";
+
+    document.querySelectorAll(".course-grid").forEach(grid => {
+        const visible = [...grid.querySelectorAll(".course")]
+            .some(course => course.style.display !== "none");
+        grid.style.display = visible ? "grid" : "none";
+    });
+}
+</script>
+
+</body>
+  </html>
 
 <article class="course">
 <h3>CSS</h3>
